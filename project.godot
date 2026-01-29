@@ -16,4 +16,4 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Gyar"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon1.svg"
+config/icon="res://icon2.svg"
