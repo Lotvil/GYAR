@@ -32,7 +32,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 101.0
+radius = 82.0
 height = 384.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2124404472]
@@ -40,9 +40,11 @@ collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1743167876]
+z_index = 5
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294193404]
-position = Vector2(1, 19)
+z_index = 5
+position = Vector2(9, 17)
 shape = SubResource("CapsuleShape2D_qhqgy")
