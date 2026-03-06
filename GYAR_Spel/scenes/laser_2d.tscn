@@ -19,6 +19,7 @@ width = 2048
 curve = SubResource("3")
 
 [sub_resource type="ParticleProcessMaterial" id="5"]
+spread = 180.0
 initial_velocity_min = 100.0
 initial_velocity_max = 100.0
 gravity = Vector3(0, 0, 0)
@@ -44,7 +45,7 @@ curve = SubResource("6")
 [sub_resource type="ParticleProcessMaterial" id="8"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(242.24213, 20, 1)
+emission_box_extents = Vector3(689.3825, 20, 1)
 direction = Vector3(-1, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
@@ -67,15 +68,14 @@ scale_curve = SubResource("4")
 color_ramp = SubResource("2")
 
 [node name="LaserBeam2D" type="RayCast2D" unique_id=1495494002]
-target_position = Vector2(375, 350)
+target_position = Vector2(757.58624, 1177.3118)
 script = ExtResource("1")
 is_casting = true
 
 [node name="Line2D" type="Line2D" parent="." unique_id=993000799]
 unique_name_in_owner = true
 visible = false
-modulate = Color(0.8997572, 0.05074863, 1.92523e-07, 1)
-points = PackedVector2Array(40, 0, 375, 350)
+points = PackedVector2Array(40, 0, 757.58624, 1177.3118)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -83,7 +83,6 @@ sharp_limit = 8.0
 
 [node name="CastingParticles2D" type="GPUParticles2D" parent="." unique_id=1911363982]
 unique_name_in_owner = true
-modulate = Color(0.8980392, 0.050980393, 0, 1)
 show_behind_parent = true
 position = Vector2(40, 0)
 emitting = false
@@ -94,8 +93,7 @@ process_material = SubResource("5")
 
 [node name="BeamParticles2D" type="GPUParticles2D" parent="." unique_id=498318595]
 unique_name_in_owner = true
-modulate = Color(0.8980392, 0.050980393, 0, 1)
-position = Vector2(207.5, 175)
+position = Vector2(398.79312, 588.6559)
 emitting = false
 amount = 50
 texture = ExtResource("2")
@@ -106,7 +104,6 @@ process_material = SubResource("8")
 
 [node name="CollisionParticles2D" type="GPUParticles2D" parent="." unique_id=1336469136]
 unique_name_in_owner = true
-modulate = Color(0.8980392, 0.050980393, 0, 1)
 show_behind_parent = true
 emitting = false
 amount = 16
@@ -114,3 +111,13 @@ texture = ExtResource("2")
 lifetime = 0.3
 visibility_rect = Rect2(-2500, -2500, 5000, 5000)
 process_material = SubResource("9")
+
+[node name="EndParticles2D" type="GPUParticles2D" parent="." unique_id=256949182]
+unique_name_in_owner = true
+show_behind_parent = true
+position = Vector2(40, 0)
+emitting = false
+texture = ExtResource("2")
+lifetime = 0.3
+visibility_rect = Rect2(0, -18.722, 29.6756, 38.4841)
+process_material = SubResource("5")
