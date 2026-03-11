@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bk6fec74yxpqa"]
+
+[ext_resource type="Texture2D" uid="uid://c1i5ufxcus5h3" path="res://assets/sprites/world_tileset.png" id="1_g7g4h"]
+[ext_resource type="Script" uid="uid://d38w0dcpgwjhc" path="res://scripts/test_scene.gd" id="1_j8ivh"]
+[ext_resource type="Script" uid="uid://d2ntbd2ve77q6" path="res://scripts/BlockData.gd" id="2_7ddre"]
+[ext_resource type="Resource" uid="uid://d2w6houe3753e" path="res://assets/Resources/soil.tres" id="3_qjeyg"]
+[ext_resource type="PackedScene" uid="uid://bi0qoyv8qt2fy" path="res://scenes/player.tscn" id="5_rnaij"]
+[ext_resource type="Texture2D" uid="uid://dcmgcc57jxxhl" path="res://assets/sprites/klo.png" id="6_h3xc6"]
+[ext_resource type="Script" uid="uid://cor25ml4vekmi" path="res://scripts/claw_laser.gd" id="7_s36qc"]
+[ext_resource type="PackedScene" uid="uid://cb1jy3pa1b4tk" path="res://scenes/laser_2d.tscn" id="8_6qxox"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8ivh"]
+texture = ExtResource("1_g7g4h")
+0:1/0 = 0
+0:1/0/custom_data_0 = &"soil"
+1:1/0 = 0
+1:1/0/custom_data_0 = &"soil"
+1:0/0 = 0
+1:0/0/custom_data_0 = &"soil"
+
+[sub_resource type="TileSet" id="TileSet_nd71p"]
+custom_data_layer_0/name = "tile_name"
+custom_data_layer_0/type = 21
+sources/1 = SubResource("TileSetAtlasSource_j8ivh")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gthg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_h3xc6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TestScene" type="Node2D" unique_id=365778999]
+script = ExtResource("1_j8ivh")
+block = Dictionary[String, ExtResource("2_7ddre")]({
+"soil": ExtResource("3_qjeyg")
+})
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=248934099]
+tile_set = SubResource("TileSet_nd71p")
+
+[node name="Player" parent="." unique_id=2124404472 instance=ExtResource("5_rnaij")]
+position = Vector2(4, 3)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2003016710]
+position = Vector2(-4, -92)
+zoom = Vector2(0.35, 0.35)
+limit_left = -5300
+limit_right = 5900
+limit_bottom = 2500
+limit_smoothed = true
+
+[node name="ClawLaser" type="AnimatedSprite2D" parent="Player" unique_id=561160678]
+z_index = 7
+position = Vector2(7, -181)
+sprite_frames = SubResource("SpriteFrames_gthg3")
+centered = false
+offset = Vector2(-21.16, -59.74)
+script = ExtResource("7_s36qc")
+
+[node name="LaserBeam2D" parent="Player/ClawLaser" unique_id=1495494002 instance=ExtResource("8_6qxox")]
+modulate = Color(0.3425688, 0.83889574, 0.35664794, 1)
+position = Vector2(4, -2)
+target_position = Vector2(-132.49997, -13.749985)
+start_distance = 90.0
