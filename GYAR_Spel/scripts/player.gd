@@ -42,3 +42,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+func _ready() -> void:
+	add_to_group("player")
+	if RoomChangeGlobal.Activate:
+		global_position = RoomChangeGlobal.PlayerPos
+		if RoomChangeGlobal.PlayerJumpOnEnter:
+			velocity.y = JUMP_VELOCITY
+		RoomChangeGlobal.Activate = false
