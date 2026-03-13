@@ -14,6 +14,8 @@ extends RayCast2D
 @export var growth_time := 0.1
 @export var color := Color.WHITE: set = set_color
 
+@export var damage_per_second: float = 27.0
+
 ## If `true`, the laser is firing.
 ## It plays appearing and disappearing animations when it's not animating.
 ## See `appear()` and `disappear()` for more information.
@@ -30,6 +32,9 @@ var finished_appearing := false
 
 @onready var line_width := line_2d.width
 
+@onready var ground: TileMapLayer = $"../../../Node/Room"
+
+signal hit_tile(tile_pos: Vector2i, damage: float)
 
 func _ready() -> void:
 	set_color(color)
@@ -55,7 +60,24 @@ func _physics_process(delta: float) -> void:
 	force_raycast_update()
 
 	if is_colliding():
+		if ground == null:
+			return
+		
 		laser_end_position = to_local(get_collision_point())
+		
+		var collision_point = get_collision_point()
+		var normal = get_collision_normal()
+
+		var corrected_point = collision_point - normal * 2.0
+
+		var tile_pos = ground.local_to_map(
+			ground.to_local(corrected_point)
+		)
+		
+		var damage = damage_per_second * delta
+
+		emit_signal("hit_tile", tile_pos, damage)
+		
 		collision_particles.global_rotation = get_collision_normal().angle()
 		collision_particles.position = laser_end_position
 
