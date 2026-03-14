@@ -14,7 +14,7 @@ extends RayCast2D
 @export var growth_time := 0.1
 @export var color := Color.WHITE: set = set_color
 
-@export var damage_per_second: float = 27.0
+@export var damage_per_second: float = 100.0
 
 ## If `true`, the laser is firing.
 ## It plays appearing and disappearing animations when it's not animating.
