@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -1250.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -45,8 +45,5 @@ func _physics_process(delta: float) -> void:
 	
 func _ready() -> void:
 	add_to_group("player")
-	if RoomChangeGlobal.Activate:
-		global_position = RoomChangeGlobal.PlayerPos
-		if RoomChangeGlobal.PlayerJumpOnEnter:
-			velocity.y = JUMP_VELOCITY
-		RoomChangeGlobal.Activate = false
+	if is_in_group("player"):
+		print("is in group player")

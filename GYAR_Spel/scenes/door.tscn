@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://butjj4tfkwlor"]
+
+[ext_resource type="Script" uid="uid://d1vmtvf83eejh" path="res://scripts/door.gd" id="1_hpvv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83dcw"]
+size = Vector2(10.07754, 24)
+
+[node name="Door" type="Area2D" unique_id=226493634]
+position = Vector2(1, 0)
+scale = Vector2(10.111111, 15.296665)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_hpvv5")
+
+[node name="markerRight" type="Marker2D" parent="." unique_id=1311891333]
+position = Vector2(123, -27)
+
+[node name="markerLeft" type="Marker2D" parent="." unique_id=1470290498]
+position = Vector2(-123, -27)
+
+[node name="stopArea" type="Area2D" parent="." unique_id=1561086195]
+collision_layer = 2
+collision_mask = 2
+
+[node name="camStopBox" type="CollisionShape2D" parent="stopArea" unique_id=1376981017]
+position = Vector2(0, -17)
+scale = Vector2(12.280002, 1.6800001)
+shape = SubResource("RectangleShape2D_uvdjg")
+
+[node name="doorArea" type="Area2D" parent="." unique_id=1869556040]
+collision_layer = 2
+collision_mask = 2
+
+[node name="door" type="CollisionShape2D" parent="doorArea" unique_id=56408948]
+position = Vector2(5.9604645e-08, -17)
+scale = Vector2(0.39692223, 1.4057143)
+shape = SubResource("RectangleShape2D_83dcw")
+
+[connection signal="body_entered" from="stopArea" to="." method="_on_stop_area_body_entered"]
+[connection signal="body_exited" from="stopArea" to="." method="_on_stop_area_body_exited"]
+[connection signal="body_entered" from="doorArea" to="." method="_on_door_area_body_entered"]
+[connection signal="body_exited" from="doorArea" to="." method="_on_door_area_body_exited"]
