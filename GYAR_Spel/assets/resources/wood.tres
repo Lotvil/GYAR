@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BlockData" format=3 uid="uid://bkvoojr00uymb"]
+
+[ext_resource type="Script" uid="uid://d2ntbd2ve77q6" path="res://scripts/BlockData.gd" id="1_pnouq"]
+
+[resource]
+script = ExtResource("1_pnouq")
+tile_name = "wood"
+atlas_coords = Array[Vector2i]([Vector2i(2, 8)])
+source_id = 1
+metadata/_custom_type_script = "uid://d2ntbd2ve77q6"

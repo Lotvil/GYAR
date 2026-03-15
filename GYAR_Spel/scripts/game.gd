@@ -13,7 +13,8 @@ var current_block = "soil"
 var inventory = {
 	"soil" : 0,
 	"mud" : 0,
-	"stone" : 0
+	"stone" : 0,
+	"wood" : 0
 }
 
 func _ready():
@@ -77,6 +78,14 @@ func add_elements(tile_name):
 		periodic_table.add_element("Si", 1)
 		periodic_table.add_element("O", 5)
 		periodic_table.add_element("Fe", 2)
+	if tile_name == "stone":
+		periodic_table.add_element("Si", 1)
+		periodic_table.add_element("Al", 2)
+		periodic_table.add_element("Fe", 2)
+	if tile_name == "wood":
+		periodic_table.add_element("C", 6)
+		periodic_table.add_element("H", 12)
+		periodic_table.add_element("O", 6)
 	
 
 func has_adjacent_tile(tile_pos: Vector2i) -> bool:
@@ -101,6 +110,8 @@ func switch_block(event):
 		current_block = "mud"
 	if event.keycode == KEY_3 and event.pressed:
 		current_block = "stone"
+	if event.keycode == KEY_4 and event.pressed:
+		current_block = "wood"
 
 func is_placable(event, tile_pos) -> bool:
 	if event.button_index != MOUSE_BUTTON_RIGHT:

@@ -72,6 +72,6 @@ shape = SubResource("CapsuleShape2D_qhqgy")
 
 [node name="PeriodicTable" parent="." unique_id=860381347 instance=ExtResource("4_dqkch")]
 offset_left = -572.0
-offset_top = -468.0
+offset_top = -439.0
 offset_right = 577.0
-offset_bottom = 178.0
+offset_bottom = 207.0
