@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://b6bt60p723ko4"]
-
-[ext_resource type="Script" uid="uid://omvufr8moap" path="res://scripts/room_change.gd" id="1_h3pwn"]
-
-[node name="DoorArea2D" type="Area2D" unique_id=2015691859]
-script = ExtResource("1_h3pwn")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
