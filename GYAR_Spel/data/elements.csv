@@ -1,0 +1,119 @@
+atomnummer,symbol,namn,atommassa,grupp,period,kategori,tillstånd,smältpunkt_K,kokpunkt_K,densitet_kg_m3,sammanfattning
+1,H,Väte,1.008,1,1,icke-metall,gas,14,20,0.0899,Väte är det lättaste grundämnet och det vanligaste i universum.
+2,He,Helium,4.0026,18,1,ädelgas,gas,,4,0.1785,Helium är en inert ädelgas som används i ballonger och kylsystem.
+3,Li,Litium,6.94,1,2,alkalimetall,fast,454,1615,535,Litium används ofta i uppladdningsbara batterier.
+4,Be,Beryllium,9.0122,2,2,alkalisk jordartsmetall,fast,1560,2743,1848,Beryllium är en lätt och mycket stark metall.
+5,B,Bor,10.81,13,2,halvmetall,fast,2348,4273,2460,Bor används i glas, keramik och halvledare.
+6,C,Kol,12.011,14,2,icke-metall,fast,3823,4300,2260,Kol är grunden för allt känt liv.
+7,N,Kväve,14.007,15,2,icke-metall,gas,63,77,1.251,Kväve utgör större delen av jordens atmosfär.
+8,O,Syre,15.999,16,2,icke-metall,gas,55,90,1.429,Syre behövs för de flesta organismers cellandning.
+9,F,Fluor,18.998,17,2,halogen,gas,54,85,1.696,Fluor är det mest elektronegativa grundämnet.
+10,Ne,Neon,20.18,18,2,ädelgas,gas,25,27,0.9,Neon används i lysande reklamskyltar.
+11,Na,Natrium,22.99,1,3,alkalimetall,fast,371,1156,968,Natrium är en mycket reaktiv metall.
+12,Mg,Magnesium,24.305,2,3,alkalisk jordartsmetall,fast,923,1363,1738,Magnesium används i lätta legeringar.
+13,Al,Aluminium,26.982,13,3,metall,fast,933,2792,2700,Aluminium är en lätt metall som används i många konstruktioner.
+14,Si,Kisel,28.085,14,3,halvmetall,fast,1687,3173,2330,Kisel används i elektronik och solceller.
+15,P,Fosfor,30.974,15,3,icke-metall,fast,317,554,1823,Fosfor är viktigt för DNA och energimolekyler i celler.
+16,S,Svavel,32.06,16,3,icke-metall,fast,388,718,1960,Svavel används i gödsel och kemikalier.
+17,Cl,Klor,35.45,17,3,halogen,gas,172,239,3.214,Klor används för att desinficera vatten.
+18,Ar,Argon,39.948,18,3,ädelgas,gas,84,87,1.784,Argon används vid svetsning och i lampor.
+19,K,Kalium,39.098,1,4,alkalimetall,fast,337,1032,856,Kalium är viktigt för nervsignaler i kroppen.
+20,Ca,Kalcium,40.078,2,4,alkalisk jordartsmetall,fast,1115,1757,1550,Kalcium är viktigt för ben och tänder.
+21,Sc,Skandium,44.956,3,4,övergångsmetall,fast,1814,3103,2985,Skandium används i vissa starka aluminiumlegeringar.
+22,Ti,Titan,47.867,4,4,övergångsmetall,fast,1941,3560,4507,Titan är starkt och korrosionsbeständigt.
+23,V,Vanadin,50.942,5,4,övergångsmetall,fast,2183,3680,6110,Vanadin används i stål för att öka styrkan.
+24,Cr,Krom,51.996,6,4,övergångsmetall,fast,2180,2944,7140,Krom används i rostfritt stål.
+25,Mn,Mangan,54.938,7,4,övergångsmetall,fast,1519,2334,7470,Mangan används i stålproduktion.
+26,Fe,Järn,55.845,8,4,övergångsmetall,fast,1811,3134,7874,Järn är huvudkomponenten i stål.
+27,Co,Kobolt,58.933,9,4,övergångsmetall,fast,1768,3200,8900,Kobolt används i batterier och legeringar.
+28,Ni,Nickel,58.693,10,4,övergångsmetall,fast,1728,3186,8908,Nickel används i rostfritt stål.
+29,Cu,Koppar,63.546,11,4,övergångsmetall,fast,1358,2835,8960,Koppar leder elektricitet mycket bra.
+30,Zn,Zink,65.38,12,4,övergångsmetall,fast,693,1180,7140,Zink används för att skydda stål mot rost.
+31,Ga,Gallium,69.723,13,4,metall,fast,303,2477,5904,Gallium används i elektronik.
+32,Ge,Germanium,72.63,14,4,halvmetall,fast,1211,3093,5323,Germanium används i halvledare.
+33,As,Arsenik,74.922,15,4,halvmetall,fast,1090,887,5727,Arsenik är giftigt men används i elektronik.
+34,Se,Selen,78.971,16,4,icke-metall,fast,494,958,4819,Selen används i elektronik och glas.
+35,Br,Brom,79.904,17,4,halogen,vätska,266,332,3120,Brom är ett flytande halogen.
+36,Kr,Krypton,83.798,18,4,ädelgas,gas,116,120,3.75,Krypton används i vissa lampor.
+37,Rb,Rubidium,85.468,1,5,alkalimetall,fast,312,961,1532,Rubidium är en mycket reaktiv metall.
+38,Sr,Strontium,87.62,2,5,alkalisk jordartsmetall,fast,1050,1655,2630,Strontium används i fyrverkerier.
+39,Y,Yttrium,88.906,3,5,övergångsmetall,fast,1799,3618,4472,Yttrium används i LED och lasrar.
+40,Zr,Zirkonium,91.224,4,5,övergångsmetall,fast,2128,4682,6511,Zirkonium används i kärnreaktorer.
+41,Nb,Niob,92.906,5,5,övergångsmetall,fast,2750,5017,8570,Niob används i superstarka legeringar.
+42,Mo,Molybden,95.95,6,5,övergångsmetall,fast,2896,4912,10280,Molybden används i höghållfast stål.
+43,Tc,Teknetium,98,7,5,övergångsmetall,fast,2430,4538,11500,Teknetium används i medicinsk diagnostik.
+44,Ru,Rutenium,101.07,8,5,övergångsmetall,fast,2607,4423,12370,Rutenium används i elektronik.
+45,Rh,Rodium,102.91,9,5,övergångsmetall,fast,2237,3968,12450,Rodium används i katalysatorer.
+46,Pd,Palladium,106.42,10,5,övergångsmetall,fast,1828,3236,12023,Palladium används i katalysatorer.
+47,Ag,Silver,107.87,11,5,övergångsmetall,fast,1235,2435,10490,Silver är en mycket bra elektrisk ledare.
+48,Cd,Kadmium,112.41,12,5,övergångsmetall,fast,594,1040,8650,Kadmium används i batterier.
+49,In,Indium,114.82,13,5,metall,fast,430,2345,7310,Indium används i pekskärmar.
+50,Sn,Tenn,118.71,14,5,metall,fast,505,2875,7310,Tenn används i lödning.
+51,Sb,Antimon,121.76,15,5,halvmetall,fast,904,1860,6697,Antimon används i legeringar.
+52,Te,Tellur,127.6,16,5,halvmetall,fast,723,1261,6240,Tellur används i solceller.
+53,I,Jod,126.9,17,5,halogen,fast,387,457,4940,Jod är viktigt för sköldkörteln.
+54,Xe,Xenon,131.29,18,5,ädelgas,gas,161,165,5.9,Xenon används i starka lampor.
+55,Cs,Cesium,132.91,1,6,alkalimetall,fast,302,944,1879,Cesium används i atomklockor.
+56,Ba,Barium,137.33,2,6,alkalisk jordartsmetall,fast,1000,2143,3510,Barium används i medicinska kontrastmedel.
+57,La,Lantan,138.91,3,6,lantanid,fast,1193,3737,6146,Lantan används i optiskt glas.
+58,Ce,Cerium,140.12,3,9,lantanid,fast,1071,3633,6689,Cerium används i katalysatorer.
+59,Pr,Praseodym,140.91,4,9,lantanid,fast,1204,3563,6640,Praseodym används i starka magneter.
+60,Nd,Neodym,144.24,5,9,lantanid,fast,1294,3373,7010,Neodym används i mycket starka magneter.
+61,Pm,Prometium,145,6,9,lantanid,fast,1373,3273,7260,Prometium är radioaktivt.
+62,Sm,Samarium,150.36,7,9,lantanid,fast,1345,2076,7353,Samarium används i magneter.
+63,Eu,Europium,151.96,8,9,lantanid,fast,1095,1800,5244,Europium används i lysdioder.
+64,Gd,Gadolinium,157.25,9,9,lantanid,fast,1586,3523,7901,Gadolinium används i medicinsk bilddiagnostik.
+65,Tb,Terbium,158.93,10,9,lantanid,fast,1629,3503,8219,Terbium används i lysmaterial.
+66,Dy,Dysprosium,162.5,11,9,lantanid,fast,1685,2840,8551,Dysprosium används i magneter.
+67,Ho,Holmium,164.93,12,9,lantanid,fast,1747,2973,8795,Holmium används i lasrar.
+68,Er,Erbium,167.26,13,9,lantanid,fast,1770,3141,9066,Erbium används i fiberoptik.
+69,Tm,Tulium,168.93,14,9,lantanid,fast,1818,2223,9321,Tulium är en sällsynt metall.
+70,Yb,Ytterbium,173.05,15,9,lantanid,fast,1092,1469,6570,Ytterbium används i vissa lasrar.
+71,Lu,Lutetium,174.97,16,9,lantanid,fast,1936,3675,9841,Lutetium används i medicinsk teknik.
+72,Hf,Hafnium,178.49,4,6,övergångsmetall,fast,2506,4876,13310,Hafnium används i kärnteknik.
+73,Ta,Tantal,180.95,5,6,övergångsmetall,fast,3290,5731,16650,Tantal används i elektronik.
+74,W,Volfram,183.84,6,6,övergångsmetall,fast,3695,5828,19250,Volfram har mycket hög smältpunkt.
+75,Re,Rhenium,186.21,7,6,övergångsmetall,fast,3459,5869,21020,Rhenium används i jetmotorer.
+76,Os,Osmium,190.23,8,6,övergångsmetall,fast,3306,5285,22610,Osmium är ett av de tätaste grundämnena.
+77,Ir,Iridium,192.22,9,6,övergångsmetall,fast,2739,4701,22650,Iridium är mycket korrosionsbeständigt.
+78,Pt,Platina,195.08,10,6,övergångsmetall,fast,2041,4098,21090,Platina används i katalysatorer.
+79,Au,Guld,196.97,11,6,övergångsmetall,fast,1337,3129,19300,Guld är en ädelmetall som används i smycken.
+80,Hg,Kvicksilver,200.59,12,6,övergångsmetall,vätska,234,630,13534,Kvicksilver är en flytande metall vid rumstemperatur.
+81,Tl,Tallium,204.38,13,6,metall,fast,577,1746,11850,Tallium är giftigt och används i elektronik.
+82,Pb,Bly,207.2,14,6,metall,fast,601,2022,11340,Bly används i batterier.
+83,Bi,Vismut,208.98,15,6,metall,fast,544,1837,9780,Vismut används i läkemedel och legeringar.
+84,Po,Polonium,209,16,6,halvmetall,fast,527,1235,9196,Polonium är mycket radioaktivt.
+85,At,Astat,210,17,6,halogen,fast,575,,7000,Astat är ett mycket sällsynt radioaktivt ämne.
+86,Rn,Radon,222,18,6,ädelgas,gas,202,211,9.73,Radon är en radioaktiv ädelgas.
+87,Fr,Francium,223,1,7,alkalimetall,fast,300,,1870,Francium är mycket radioaktivt och sällsynt.
+88,Ra,Radium,226,2,7,alkalisk jordartsmetall,fast,973,2010,5000,Radium är radioaktivt.
+89,Ac,Aktinium,227,3,7,aktinid,fast,1323,3473,10070,Aktinium är radioaktivt.
+90,Th,Torium,232.04,3,10,aktinid,fast,2023,5093,11724,Torium används i kärnforskning.
+91,Pa,Protaktinium,231.04,4,10,aktinid,fast,1845,4273,15370,Protaktinium är radioaktivt.
+92,U,Uran,238.03,5,10,aktinid,fast,1408,4200,19050,Uran används som kärnbränsle.
+93,Np,Neptunium,237,6,10,aktinid,fast,917,4273,20450,Neptunium är radioaktivt.
+94,Pu,Plutonium,244,7,10,aktinid,fast,913,3503,19816,Plutonium används i kärnvapen och reaktorer.
+95,Am,Americium,243,8,10,aktinid,fast,1449,2284,13670,Americium används i rökdetektorer.
+96,Cm,Curium,247,9,10,aktinid,fast,1618,3383,13510,Curium är radioaktivt.
+97,Bk,Berkelium,247,10,10,aktinid,fast,1323,,14780,Berkelium är ett syntetiskt grundämne.
+98,Cf,Californium,251,11,10,aktinid,fast,1173,,15100,Californium används i neutronkällor.
+99,Es,Einsteinium,252,12,10,aktinid,fast,1133,,8400,Einsteinium är mycket radioaktivt.
+100,Fm,Fermium,257,13,10,aktinid,fast,1800,,9700,Fermium är syntetiskt.
+101,Md,Mendelevium,258,14,10,aktinid,fast,1100,,10000,Mendelevium är syntetiskt.
+102,No,Nobelium,259,15,10,aktinid,fast,1100,,9800,Nobelium är syntetiskt.
+103,Lr,Lawrencium,262,16,10,aktinid,fast,1900,,15000,Lawrencium är syntetiskt.
+104,Rf,Rutherfordium,267,4,7,övergångsmetall,fast,,,,Rutherfordium är ett syntetiskt supertungt grundämne.
+105,Db,Dubnium,268,5,7,övergångsmetall,fast,,,,Dubnium är syntetiskt.
+106,Sg,Seaborgium,271,6,7,övergångsmetall,fast,,,,Seaborgium är syntetiskt.
+107,Bh,Bohrium,272,7,7,övergångsmetall,fast,,,,Bohrium är syntetiskt.
+108,Hs,Hassium,270,8,7,övergångsmetall,fast,,,,Hassium är syntetiskt.
+109,Mt,Meitnerium,276,9,7,övergångsmetall,fast,,,,Meitnerium är syntetiskt.
+110,Ds,Darmstadtium,281,10,7,övergångsmetall,fast,,,,Darmstadtium är syntetiskt.
+111,Rg,Röntgenium,280,11,7,övergångsmetall,fast,,,,Röntgenium är syntetiskt.
+112,Cn,Copernicium,285,12,7,övergångsmetall,fast,,,,Copernicium är syntetiskt.
+113,Nh,Nihonium,284,13,7,metall,fast,,,,Nihonium är syntetiskt.
+114,Fl,Flerovium,289,14,7,metall,fast,,,,Flerovium är syntetiskt.
+115,Mc,Moscovium,288,15,7,metall,fast,,,,Moscovium är syntetiskt.
+116,Lv,Livermorium,293,16,7,metall,fast,,,,Livermorium är syntetiskt.
+117,Ts,Tenness,294,17,7,halogen,fast,,,,Tenness är ett mycket tungt syntetiskt grundämne.
+118,Og,Oganesson,294,18,7,ädelgas,gas,,,,Oganesson är det tyngsta kända grundämnet.

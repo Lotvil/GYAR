@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://3mm24wa8poni" path="res://assets/sprites/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bq8fam0qxhsdq" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://ch83wmnk4y3he" path="res://assets/sprites/playerIdle.png" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://c7tey0wcsccly" path="res://scenes/periodic_table.tscn" id="4_dqkch"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -48,3 +49,9 @@ animation = &"move"
 z_index = 5
 position = Vector2(9, 17)
 shape = SubResource("CapsuleShape2D_qhqgy")
+
+[node name="PeriodicTable" parent="." unique_id=860381347 instance=ExtResource("4_dqkch")]
+offset_left = -575.0
+offset_top = -424.0
+offset_right = 574.0
+offset_bottom = 222.0

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c7tey0wcsccly"]
+
+[ext_resource type="Script" uid="uid://dxvaagpdibi6b" path="res://scripts/periodic_table.gd" id="1_hamq6"]
+[ext_resource type="PackedScene" uid="uid://d4kryaip7h6d1" path="res://scenes/sidebar.tscn" id="2_acigi"]
+
+[node name="PeriodicTable" type="Control" unique_id=860381347]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1149.0
+offset_bottom = 646.0
+script = ExtResource("1_hamq6")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1285142564]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+theme_override_constants/separation = 12
+theme_override_constants/minimum_grab_thickness = 6
+split_offsets = PackedInt32Array(850)
+split_offset = 850
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer" unique_id=2110292060]
+layout_mode = 2
+
+[node name="TableGrid" type="GridContainer" parent="HSplitContainer/VBoxContainer" unique_id=192094094]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 18
+
+[node name="LanthanideRow" type="GridContainer" parent="HSplitContainer/VBoxContainer" unique_id=1281266645]
+layout_mode = 2
+columns = 15
+
+[node name="ActinideRow" type="GridContainer" parent="HSplitContainer/VBoxContainer" unique_id=1419390897]
+layout_mode = 2
+columns = 15
+
+[node name="Sidebar" parent="HSplitContainer" unique_id=1878355330 instance=ExtResource("2_acigi")]
+layout_mode = 2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bpnc7vsenk0i5"
+
+[deps]
+
+files=["res://data/elements.symbol.translation", "res://data/elements.namn.translation", "res://data/elements.atommassa.translation", "res://data/elements.grupp.translation", "res://data/elements.period.translation", "res://data/elements.kategori.translation", "res://data/elements.tillstånd.translation", "res://data/elements.smältpunkt.translation", "res://data/elements.kokpunkt.translation", "res://data/elements.densitet.translation", "res://data/elements.sammanfattning.translation"]
+
+source_file="res://data/elements.csv"
+dest_files=["res://data/elements.symbol.translation", "res://data/elements.namn.translation", "res://data/elements.atommassa.translation", "res://data/elements.grupp.translation", "res://data/elements.period.translation", "res://data/elements.kategori.translation", "res://data/elements.tillstånd.translation", "res://data/elements.smältpunkt.translation", "res://data/elements.kokpunkt.translation", "res://data/elements.densitet.translation", "res://data/elements.sammanfattning.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d4kryaip7h6d1"]
+
+[ext_resource type="Script" uid="uid://cf822cw1sip7k" path="res://scripts/sidebar.gd" id="1_iqt6p"]
+
+[node name="Sidebar" type="PanelContainer" unique_id=1878355330]
+offset_right = 129.0
+offset_bottom = 189.0
+script = ExtResource("1_iqt6p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1095525429]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1319665307]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="Number" type="Label" parent="VBoxContainer" unique_id=1687918520]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="Mass" type="Label" parent="VBoxContainer" unique_id=676947763]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="Category" type="Label" parent="VBoxContainer" unique_id=1852033889]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="Melting" type="Label" parent="VBoxContainer" unique_id=1251033311]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="Boiling" type="Label" parent="VBoxContainer" unique_id=1569250846]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="Density" type="Label" parent="VBoxContainer" unique_id=698905371]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="Summary" type="RichTextLabel" parent="VBoxContainer" unique_id=1413261404]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+fit_content = true
