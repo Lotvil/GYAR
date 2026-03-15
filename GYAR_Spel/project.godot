@@ -19,6 +19,10 @@ run/main_scene="uid://15gurnwfdsjb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://newyix2u22o3"
 
+[autoload]
+
+RoomChangeGlobal="*uid://j5rh1gk6h55"
+
 [global_group]
 
 player=""
