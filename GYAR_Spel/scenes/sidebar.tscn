@@ -15,6 +15,10 @@ theme_override_constants/separation = 6
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
+[node name="Count" type="Label" parent="VBoxContainer" unique_id=1375200371]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
 [node name="Number" type="Label" parent="VBoxContainer" unique_id=1687918520]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14

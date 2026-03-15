@@ -3,6 +3,7 @@ extends Node2D
 @export var block : Dictionary[String, BlockData]
 @onready var ground: TileMapLayer = $Node/Room
 @onready var laser: RayCast2D = $Player/ClawLaser/LaserBeam2D
+@onready var periodic_table: Control = $Player/PeriodicTable
 
 
 
@@ -55,7 +56,7 @@ func take_damage(tile_name: StringName, tile_pos: Vector2i, amount: float = 1):
 	if current_health <= 0:
 		ground.erase_cell(tile_pos)
 		broken_tiles_health.erase(tile_pos)
-		inventory[tile_name] += 1
+		add_elements(tile_name)
 		return
 
 	var stage_count = block[tile_name].atlas_coords.size()
@@ -70,13 +71,13 @@ func take_damage(tile_name: StringName, tile_pos: Vector2i, amount: float = 1):
 	if current_stage != atlas:
 		ground.set_cell(tile_pos, block[tile_name].source_id, atlas)
 
-func switch_block(event):
-	if event.keycode == KEY_1 and event.pressed:
-		current_block = "soil"
-	if event.keycode == KEY_2 and event.pressed:
-		current_block = "mud"
-	if event.keycode == KEY_3 and event.pressed:
-		current_block = "stone"
+func add_elements(tile_name):
+	inventory[tile_name] += 1
+	if tile_name == "soil":
+		periodic_table.add_element("Si", 1)
+		periodic_table.add_element("O", 5)
+		periodic_table.add_element("Fe", 2)
+	
 
 func has_adjacent_tile(tile_pos: Vector2i) -> bool:
 	var directions = [
@@ -93,6 +94,14 @@ func has_adjacent_tile(tile_pos: Vector2i) -> bool:
 
 	return false
  
+func switch_block(event):
+	if event.keycode == KEY_1 and event.pressed:
+		current_block = "soil"
+	if event.keycode == KEY_2 and event.pressed:
+		current_block = "mud"
+	if event.keycode == KEY_3 and event.pressed:
+		current_block = "stone"
+
 func is_placable(event, tile_pos) -> bool:
 	if event.button_index != MOUSE_BUTTON_RIGHT:
 		return false
