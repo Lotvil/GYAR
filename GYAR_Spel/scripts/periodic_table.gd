@@ -13,6 +13,9 @@ const TILE = preload("res://scenes/element_tile.tscn")
 var elements = []
 var tiles = {}
 
+var tiles_by_symbol : Dictionary = {}
+var last_open_element = "-1"
+
 var is_open = false
 
 func _ready():
@@ -106,6 +109,8 @@ func build_table():
 		var tile = TILE.instantiate()
 		grid.add_child(tile)
 		tile.setup(element)
+		
+		tiles_by_symbol[element["symbol"]] = tile
 
 		tile.connect("element_clicked", _on_element_clicked)
 
@@ -116,26 +121,24 @@ func build_table():
 
 		grid.move_child(tile, index)
 
-func add_lanthanide(element):
-
-	var tile = TILE.instantiate()
+func _on_element_clicked(data, discovered, count):
+	last_open_element = data["symbol"]
 	
-	lanthanides.add_child(tile)
-	tile.setup(element)
-	tile.connect("element_clicked", _on_element_clicked)
+	sidebar.show_element(data, discovered, count)
 
-	lanthanides.add_child(tile)
-
-func add_actinide(element):
-
-	var tile = TILE.instantiate()
+func add_element(symbol:String, amount:int = 1):
 	
-	actinides.add_child(tile)
-	tile.setup(element)
-	tile.connect("element_clicked", _on_element_clicked)
+	if !tiles_by_symbol.has(symbol):
+		return
 
-	actinides.add_child(tile)
+	var tile = tiles_by_symbol[symbol]
 
-func _on_element_clicked(data, discovered):
+	tile.count += amount
 
-	sidebar.show_element(data, discovered)
+	if !tile.discovered:
+		tile.discovered = true
+	
+	if last_open_element == symbol:
+		tile._pressed()
+
+	tile.update_visual()

@@ -75,4 +75,4 @@ func category_color(category:String):
 
 
 func _pressed():
-	emit_signal("element_clicked", element_data, discovered)
+	emit_signal("element_clicked", element_data, discovered, count)
