@@ -142,3 +142,17 @@ func add_element(symbol:String, amount:int = 1):
 		tile._pressed()
 
 	tile.update_visual()
+
+func check_element(symbol:String, amount:int = 1):
+	if !tiles_by_symbol.has(symbol):
+		return false
+	
+	var tile = tiles_by_symbol[symbol]
+	
+	if tile.count >= amount:
+		return true
+	
+	return false
+	
+	
+	

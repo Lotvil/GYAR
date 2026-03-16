@@ -5,3 +5,4 @@ class_name BlockData
 @export var health: int = 3
 @export var atlas_coords: Array[Vector2i] = []
 @export var source_id: int = 0
+@export var elements: Dictionary[String, int] = {}

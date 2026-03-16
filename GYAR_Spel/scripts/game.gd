@@ -9,13 +9,6 @@ extends Node2D
 
 var broken_tiles_health : Dictionary = {}
 var current_block = "soil"
- 
-var inventory = {
-	"soil" : 0,
-	"mud" : 0,
-	"stone" : 0,
-	"wood" : 0
-}
 
 func _ready():
 	laser.hit_tile.connect(_on_laser_hit_tile)
@@ -34,7 +27,7 @@ func _input(event):
  
 		if is_placable(event, tile_pos):
 			ground.set_cell(tile_pos, block[current_block].source_id, block[current_block].atlas_coords[0])
-			inventory[current_block] -= 1
+			add_elements(current_block, -1)
  
 	if event is InputEventKey:
 		switch_block(event)
@@ -72,20 +65,19 @@ func take_damage(tile_name: StringName, tile_pos: Vector2i, amount: float = 1):
 	if current_stage != atlas:
 		ground.set_cell(tile_pos, block[tile_name].source_id, atlas)
 
-func add_elements(tile_name):
-	inventory[tile_name] += 1
+func add_elements(tile_name, mod : int = 1):
 	if tile_name == "soil":
-		periodic_table.add_element("Si", 1)
-		periodic_table.add_element("O", 5)
-		periodic_table.add_element("Fe", 2)
+		periodic_table.add_element("Si", mod * 1)
+		periodic_table.add_element("O", mod * 5)
+		periodic_table.add_element("Fe", mod * 2)
 	if tile_name == "stone":
-		periodic_table.add_element("Si", 1)
-		periodic_table.add_element("Al", 2)
-		periodic_table.add_element("Fe", 2)
+		periodic_table.add_element("Si", mod * 1)
+		periodic_table.add_element("Al", mod * 2)
+		periodic_table.add_element("Fe", mod * 2)
 	if tile_name == "wood":
-		periodic_table.add_element("C", 6)
-		periodic_table.add_element("H", 12)
-		periodic_table.add_element("O", 6)
+		periodic_table.add_element("C", mod * 6)
+		periodic_table.add_element("H", mod * 12)
+		periodic_table.add_element("O", mod * 6)
 	
 
 func has_adjacent_tile(tile_pos: Vector2i) -> bool:
@@ -116,14 +108,21 @@ func switch_block(event):
 func is_placable(event, tile_pos) -> bool:
 	if event.button_index != MOUSE_BUTTON_RIGHT:
 		return false
-		
-	if inventory[current_block] <= 0:
-		return false
-
+	
 	if ground.get_cell_source_id(tile_pos) != -1:
 		return false
 
 	if !has_adjacent_tile(tile_pos):
 		return false
-
-	return true
+		
+	if current_block == "soil":
+		if periodic_table.check_element("Si", 1) and periodic_table.check_element("O", 5) and periodic_table.check_element("Fe", 2):
+			return true
+	if current_block == "stone":
+		if periodic_table.check_element("Si", 1) and periodic_table.check_element("Al", 2) and periodic_table.check_element("Fe", 2):
+			return true
+	if current_block == "wood":
+		if periodic_table.check_element("C", 6) and periodic_table.check_element("H", 12) and periodic_table.check_element("O", 6):
+			return true
+	
+	return false
