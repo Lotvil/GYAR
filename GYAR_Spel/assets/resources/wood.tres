@@ -7,4 +7,9 @@ script = ExtResource("1_pnouq")
 tile_name = "wood"
 atlas_coords = Array[Vector2i]([Vector2i(2, 8)])
 source_id = 1
+elements = Dictionary[String, int]({
+"C": 6,
+"H": 12,
+"O": 6
+})
 metadata/_custom_type_script = "uid://d2ntbd2ve77q6"

@@ -7,36 +7,34 @@
 z_index = 10
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1149.0
-offset_bottom = 646.0
+offset_right = 1152.0
+offset_bottom = 648.0
+scale = Vector2(0.95, 1)
 script = ExtResource("1_hamq6")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1285142564]
+[node name="VSplitContainer" type="VSplitContainer" parent="." unique_id=721601240]
 layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 646.0
+offset_right = 1152.0
+offset_bottom = 648.0
+split_offsets = PackedInt32Array(500)
+split_offset = 500
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VSplitContainer" unique_id=1285142564]
+layout_mode = 2
 theme_override_constants/separation = 12
 theme_override_constants/minimum_grab_thickness = 6
-split_offsets = PackedInt32Array(850)
-split_offset = 850
+split_offsets = PackedInt32Array(851)
+split_offset = 851
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer" unique_id=2110292060]
-layout_mode = 2
-
-[node name="TableGrid" type="GridContainer" parent="HSplitContainer/VBoxContainer" unique_id=192094094]
+[node name="TableGrid" type="GridContainer" parent="VSplitContainer/HSplitContainer" unique_id=192094094]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 18
 
-[node name="LanthanideRow" type="GridContainer" parent="HSplitContainer/VBoxContainer" unique_id=1281266645]
+[node name="Sidebar" parent="VSplitContainer/HSplitContainer" unique_id=1878355330 instance=ExtResource("2_acigi")]
 layout_mode = 2
-columns = 15
 
-[node name="ActinideRow" type="GridContainer" parent="HSplitContainer/VBoxContainer" unique_id=1419390897]
-layout_mode = 2
-columns = 15
-
-[node name="Sidebar" parent="HSplitContainer" unique_id=1878355330 instance=ExtResource("2_acigi")]
+[node name="GridContainer" type="GridContainer" parent="VSplitContainer" unique_id=1493980679]
 layout_mode = 2

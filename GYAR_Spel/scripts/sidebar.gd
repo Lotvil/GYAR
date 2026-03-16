@@ -1,14 +1,15 @@
 extends PanelContainer
 
-@onready var title = $VBoxContainer/Title
-@onready var count = $VBoxContainer/Count
-@onready var number = $VBoxContainer/Number
-@onready var mass = $VBoxContainer/Mass
-@onready var category = $VBoxContainer/Category
-@onready var melting = $VBoxContainer/Melting
-@onready var boiling = $VBoxContainer/Boiling
-@onready var density = $VBoxContainer/Density
-@onready var summary = $VBoxContainer/Summary
+@onready var title: Label = $MarginContainer/VBoxContainer/Title
+@onready var count: Label = $MarginContainer/VBoxContainer/Count
+@onready var number: Label = $MarginContainer/VBoxContainer/Number
+@onready var mass: Label = $MarginContainer/VBoxContainer/Mass
+@onready var category: Label = $MarginContainer/VBoxContainer/Category
+@onready var melting: Label = $MarginContainer/VBoxContainer/Melting
+@onready var boiling: Label = $MarginContainer/VBoxContainer/Boiling
+@onready var density: Label = $MarginContainer/VBoxContainer/Density
+@onready var summary: RichTextLabel = $MarginContainer/VBoxContainer/Summary
+
 
 
 func show_element(data, discovered, counts):

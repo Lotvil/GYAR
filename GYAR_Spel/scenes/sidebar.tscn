@@ -4,46 +4,53 @@
 
 [node name="Sidebar" type="PanelContainer" unique_id=1878355330]
 offset_right = 129.0
-offset_bottom = 189.0
+offset_bottom = 208.0
 script = ExtResource("1_iqt6p")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1095525429]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=371299889]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1095525429]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="Title" type="Label" parent="VBoxContainer" unique_id=1319665307]
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1319665307]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="Count" type="Label" parent="VBoxContainer" unique_id=1375200371]
+[node name="Count" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1375200371]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="Number" type="Label" parent="VBoxContainer" unique_id=1687918520]
+[node name="Number" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1687918520]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="Mass" type="Label" parent="VBoxContainer" unique_id=676947763]
+[node name="Mass" type="Label" parent="MarginContainer/VBoxContainer" unique_id=676947763]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="Category" type="Label" parent="VBoxContainer" unique_id=1852033889]
+[node name="Category" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1852033889]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="Melting" type="Label" parent="VBoxContainer" unique_id=1251033311]
+[node name="Melting" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1251033311]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="Boiling" type="Label" parent="VBoxContainer" unique_id=1569250846]
+[node name="Boiling" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1569250846]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="Density" type="Label" parent="VBoxContainer" unique_id=698905371]
+[node name="Density" type="Label" parent="MarginContainer/VBoxContainer" unique_id=698905371]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="Summary" type="RichTextLabel" parent="VBoxContainer" unique_id=1413261404]
+[node name="Summary" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1413261404]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
 theme_override_font_sizes/bold_font_size = 12

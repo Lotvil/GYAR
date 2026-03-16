@@ -66,18 +66,8 @@ func take_damage(tile_name: StringName, tile_pos: Vector2i, amount: float = 1):
 		ground.set_cell(tile_pos, block[tile_name].source_id, atlas)
 
 func add_elements(tile_name, mod : int = 1):
-	if tile_name == "soil":
-		periodic_table.add_element("Si", mod * 1)
-		periodic_table.add_element("O", mod * 5)
-		periodic_table.add_element("Fe", mod * 2)
-	if tile_name == "stone":
-		periodic_table.add_element("Si", mod * 1)
-		periodic_table.add_element("Al", mod * 2)
-		periodic_table.add_element("Fe", mod * 2)
-	if tile_name == "wood":
-		periodic_table.add_element("C", mod * 6)
-		periodic_table.add_element("H", mod * 12)
-		periodic_table.add_element("O", mod * 6)
+	for symbol in block[tile_name].elements:
+		periodic_table.add_element(symbol, mod * block[tile_name].elements[symbol])
 	
 
 func has_adjacent_tile(tile_pos: Vector2i) -> bool:
@@ -106,6 +96,8 @@ func switch_block(event):
 		current_block = "wood"
 
 func is_placable(event, tile_pos) -> bool:
+	var r = true
+	
 	if event.button_index != MOUSE_BUTTON_RIGHT:
 		return false
 	
@@ -115,14 +107,11 @@ func is_placable(event, tile_pos) -> bool:
 	if !has_adjacent_tile(tile_pos):
 		return false
 		
-	if current_block == "soil":
-		if periodic_table.check_element("Si", 1) and periodic_table.check_element("O", 5) and periodic_table.check_element("Fe", 2):
-			return true
-	if current_block == "stone":
-		if periodic_table.check_element("Si", 1) and periodic_table.check_element("Al", 2) and periodic_table.check_element("Fe", 2):
-			return true
-	if current_block == "wood":
-		if periodic_table.check_element("C", 6) and periodic_table.check_element("H", 12) and periodic_table.check_element("O", 6):
-			return true
+	for symbol in block[current_block].elements:
+		if !periodic_table.check_element(symbol):
+			r = false
+	
+	if r:
+		return true
 	
 	return false

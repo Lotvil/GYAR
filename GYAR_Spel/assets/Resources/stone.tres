@@ -8,4 +8,9 @@ tile_name = "stone"
 health = 9
 atlas_coords = Array[Vector2i]([Vector2i(6, 1), Vector2i(8, 0), Vector2i(8, 1)])
 source_id = 1
+elements = Dictionary[String, int]({
+"Al": 2,
+"Fe": 2,
+"Si": 1
+})
 metadata/_custom_type_script = "uid://d2ntbd2ve77q6"

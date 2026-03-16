@@ -2,12 +2,10 @@ extends Control
 
 const TILE = preload("res://scenes/element_tile.tscn")
 
-@onready var table_grid: GridContainer = $HSplitContainer/VBoxContainer/TableGrid
+@onready var table_grid: GridContainer = $VSplitContainer/HSplitContainer/TableGrid
 
-@onready var grid: GridContainer = $HSplitContainer/VBoxContainer/TableGrid
-@onready var lanthanides: GridContainer = $HSplitContainer/VBoxContainer/LanthanideRow
-@onready var actinides: GridContainer = $HSplitContainer/VBoxContainer/ActinideRow
-@onready var sidebar: PanelContainer = $HSplitContainer/Sidebar
+@onready var grid: GridContainer = $VSplitContainer/HSplitContainer/TableGrid
+@onready var sidebar: PanelContainer = $VSplitContainer/HSplitContainer/Sidebar
 
 
 var elements = []
