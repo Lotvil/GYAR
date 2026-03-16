@@ -71,7 +71,8 @@ z_index = 5
 shape = SubResource("CapsuleShape2D_qhqgy")
 
 [node name="PeriodicTable" parent="." unique_id=860381347 instance=ExtResource("4_dqkch")]
-offset_left = -517.0
-offset_top = -417.0
-offset_right = 632.0
-offset_bottom = 229.0
+offset_left = -1135.0
+offset_top = -1005.0
+offset_right = 14.0
+offset_bottom = -359.0
+scale = Vector2(2, 2.105)
