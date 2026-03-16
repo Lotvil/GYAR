@@ -5,34 +5,54 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -1250.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var periodic_table: Control = $PeriodicTable
+@onready var laser_beam_2d: RayCast2D = $ClawLaser/LaserBeam2D
 
 
+var ps_is_open = false
+
+func _process(_delta):
+	if Input.is_action_just_pressed("inventory"):
+		if ps_is_open:
+			animated_sprite.play("turn_r")
+			ps_is_open = false
+			periodic_table.close()
+			laser_beam_2d.ps_is_open = false
+		else:
+			ps_is_open = true
+			animated_sprite.play("turn")
+			periodic_table.open()
+			laser_beam_2d.ps_is_open = true
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction -1, 0, 1
-	var direction := Input.get_axis("moveLeft", "moveRight")
 	
-	# Flip sprite
-	if direction > 0:
-		animated_sprite.flip_h = false
-	elif direction < 0:
-		animated_sprite.flip_h = true
+	var direction = 0
 	
-	# Play animations
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")
+	if !ps_is_open:
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+
+		# Get the input direction -1, 0, 1
+		direction = Input.get_axis("moveLeft", "moveRight")
+		
+		# Flip sprite
+		if direction > 0:
+			animated_sprite.flip_h = false
+		elif direction < 0:
+			animated_sprite.flip_h = true
+		
+		# Play animations
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite.play("idle")
+			else:
+				animated_sprite.play("move")
 		else:
-			animated_sprite.play("move")
-	else:
-		animated_sprite.play("jump")
+			animated_sprite.play("jump")
 	
 	
 	

@@ -7,9 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://c5kv5sca17kes" path="res://assets/sprites/frame0002.png" id="5_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://bi5772oda111u" path="res://assets/sprites/frame0003.png" id="6_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://dxip1q3vlwdk1" path="res://assets/sprites/frame0004.png" id="7_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://cdw1b22jml262" path="res://assets/sprites/turn/turn_around0000.png" id="8_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://vpi56q03oe45" path="res://assets/sprites/frame0005.png" id="8_jej6c"]
+[ext_resource type="Texture2D" uid="uid://b1aanynjh3ujm" path="res://assets/sprites/turn/turn_around0001.png" id="9_oprun"]
+[ext_resource type="Texture2D" uid="uid://iqycqp0af16f" path="res://assets/sprites/turn/turn_around0002.png" id="10_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://ucfe40cip7hc" path="res://assets/sprites/turn/turn_around0003.png" id="11_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://c35ohjuvgj5kc" path="res://assets/sprites/turn/turn_around0004.png" id="12_fulsm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
+resource_name = "turn"
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -49,6 +55,46 @@ animations = [{
 "loop": true,
 "name": &"move",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_f1ej7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oprun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a8ls1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qfm1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fulsm")
+}],
+"loop": false,
+"name": &"turn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_fulsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qfm1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a8ls1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oprun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f1ej7")
+}],
+"loop": false,
+"name": &"turn_r",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
@@ -64,7 +110,7 @@ z_index = 5
 position = Vector2(0.9999962, 0.99999976)
 scale = Vector2(0.997992, 1.0007657)
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"idle"
+animation = &"turn_r"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1294193404]
 z_index = 5

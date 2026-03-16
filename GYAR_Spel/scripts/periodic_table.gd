@@ -14,28 +14,17 @@ var tiles = {}
 var tiles_by_symbol : Dictionary = {}
 var last_open_element = "-1"
 
-var is_open = false
-
 func _ready():
 	close()
 
 	load_elements()
 	build_table()
 
-func _process(_delta):
-	if Input.is_action_just_pressed("inventory"):
-		if is_open:
-			close()
-		else:
-			open()
-
 func open():
 	visible = true
-	is_open = true
 
 func close():
 	visible = false
-	is_open = false
 
 
 

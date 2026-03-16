@@ -11,7 +11,7 @@ extends RayCast2D
 ## Distance in pixels from the origin to start drawing and firing the laser.
 @export var start_distance := 40.0
 ## Base duration of the tween animation in seconds.
-@export var growth_time := 0.1
+@export var growth_time := 0.05
 @export var color := Color.WHITE: set = set_color
 
 @export var damage_per_second: float = 100.0
@@ -20,6 +20,8 @@ extends RayCast2D
 ## It plays appearing and disappearing animations when it's not animating.
 ## See `appear()` and `disappear()` for more information.
 @export var is_casting := false: set = set_is_casting
+
+@export var ps_is_open := false
 
 var tween: Tween = null
 var finished_appearing := false
@@ -47,6 +49,12 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		set_physics_process(false)
 
+func _process(_delta) -> void:
+	collide_with_bodies = !ps_is_open
+	if ps_is_open:
+		modulate = Color.AQUA
+	else:
+		modulate = Color.GREEN
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos : Vector2 = to_local(get_global_mouse_position())
