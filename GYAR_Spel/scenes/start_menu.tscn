@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bh3l8ww5gbxkh"]
+
+[ext_resource type="Script" uid="uid://bl50unrjh210a" path="res://scripts/start_menu.gd" id="1_ouf4f"]
+[ext_resource type="Texture2D" uid="uid://b4y2afpsxdg1s" path="res://assets/menu/background.png" id="2_thu50"]
+
+[node name="startMenu" type="Node2D" unique_id=628210908]
+script = ExtResource("1_ouf4f")
+
+[node name="Control" type="Control" parent="." unique_id=1992952998]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start" type="Button" parent="Control" unique_id=1266879153]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 306.0
+offset_right = 783.0
+offset_bottom = 388.0
+text = "Start
+"
+
+[node name="quit" type="Button" parent="Control" unique_id=266577959]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 444.0
+offset_right = 747.0
+offset_bottom = 496.0
+text = "Quit
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=223888773]
+z_index = -1
+position = Vector2(574, 322)
+scale = Vector2(0.6041667, 0.6111111)
+texture = ExtResource("2_thu50")
+
+[connection signal="pressed" from="Control/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/quit" to="." method="_on_quit_pressed"]
