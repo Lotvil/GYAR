@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlockData" format=3 uid="uid://bdmoxg1f4juxl"]
+
+[ext_resource type="Script" uid="uid://d2ntbd2ve77q6" path="res://scripts/BlockData.gd" id="1_10fl1"]
+
+[resource]
+script = ExtResource("1_10fl1")
+tile_name = "sand"
+atlas_coords = Array[Vector2i]([Vector2i(2, 1), Vector2i(3, 0), Vector2i(3, 1)])
+elements = Dictionary[String, int]({
+"Si": 10
+})
+metadata/_custom_type_script = "uid://d2ntbd2ve77q6"

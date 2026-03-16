@@ -2,8 +2,9 @@ extends Node2D
 
 var enterSide = null
 
-@onready var camera_2d: Camera2D = $"../Player/Camera2D"
-@onready var player: CharacterBody2D = $"../Player"
+@onready var player: CharacterBody2D = $"../../Player"
+@onready var camera_2d: Camera2D = $"../../Player/Camera2D"
+
 
 
 func _on_stop_area_body_entered(body: Node2D) -> void:
@@ -19,7 +20,7 @@ func _on_stop_area_body_exited(body: Node2D) -> void:
 		print("exit")
 		camera_2d.top_level = false
 		camera_2d.global_position.x = player.global_position.x
-		camera_2d.global_position.y = player.global_position.y -92
+		camera_2d.global_position.y = player.global_position.y -324
 
 
 func _on_door_area_body_entered(body: Node2D) -> void:
