@@ -115,6 +115,138 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_a8ls1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/PeriodicTable:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ClawLaser/LaserBeam2D:ps_is_open")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:ps_is_open")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qfm1y"]
+resource_name = "ps_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.7, 0.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D/PeriodicTable:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("ClawLaser/LaserBeam2D:ps_is_open")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath(".:ps_is_open")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fulsm"]
+_data = {
+&"RESET": SubResource("Animation_a8ls1"),
+&"ps_open": SubResource("Animation_qfm1y")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=2124404472]
 collision_layer = 2
 script = ExtResource("1_g2els")
@@ -124,7 +256,7 @@ z_index = 5
 position = Vector2(0.9999962, 0.99999976)
 scale = Vector2(0.997992, 1.0007657)
 sprite_frames = SubResource("SpriteFrames_60mlk")
-animation = &"turn_r"
+animation = &"turn"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=595718116]
 z_index = 5
@@ -143,11 +275,11 @@ position_smoothing_speed = 10.0
 
 [node name="PeriodicTable" parent="Camera2D" unique_id=860381347 instance=ExtResource("4_dqkch")]
 z_index = 4
-offset_left = -1140.0
-offset_top = -751.0
-offset_right = 9.0
-offset_bottom = -105.0
-scale = Vector2(2, 2.105)
+offset_left = -675.0
+offset_top = -529.0
+offset_right = 474.0
+offset_bottom = 117.0
+scale = Vector2(1.2, 1.262)
 metadata/_edit_use_anchors_ = true
 
 [node name="ClawLaser" type="AnimatedSprite2D" parent="." unique_id=197824598]
@@ -161,7 +293,10 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(4, -2)
-target_position = Vector2(-147.12451, -30.662842)
+target_position = Vector2(48.65485, 1399.1543)
 start_distance = 90.0
 growth_time = 0.1
 damage_per_second = 10000.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
+libraries/ = SubResource("AnimationLibrary_fulsm")

@@ -7,22 +7,25 @@ const JUMP_VELOCITY = -1250.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var periodic_table: Control = $Camera2D/PeriodicTable
 @onready var laser_beam_2d: RayCast2D = $ClawLaser/LaserBeam2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
-var ps_is_open = false
+@export var ps_is_open = false
 
 func _process(_delta):
 	if Input.is_action_just_pressed("inventory"):
 		if ps_is_open:
-			animated_sprite.play("turn_r")
+			animated_sprite.play_backwards("turn")
+			animation_player.play_backwards("ps_open")
 			ps_is_open = false
 			periodic_table.close()
 			laser_beam_2d.ps_is_open = false
 		else:
 			ps_is_open = true
-			animated_sprite.play("turn")
 			periodic_table.open()
 			laser_beam_2d.ps_is_open = true
+			animated_sprite.play("turn")
+			animation_player.play("ps_open")
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

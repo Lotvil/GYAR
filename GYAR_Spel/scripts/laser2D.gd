@@ -59,7 +59,6 @@ func _process(_delta) -> void:
 		cast_speed = 8000.0
 		max_length = 1400.0
 		modulate = Color.GREEN
-		
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos : Vector2 = to_local(get_global_mouse_position())
