@@ -11,27 +11,34 @@ const JUMP_VELOCITY = -1250.0
 
 
 @export var ps_is_open = false
+@export var ps_is_open2 = false
 
 func _process(_delta):
 	if Input.is_action_just_pressed("inventory"):
-		if ps_is_open:
-			animated_sprite.play_backwards("turn")
-			animation_player.play_backwards("ps_open")
-			ps_is_open = false
-			periodic_table.close()
-			laser_beam_2d.ps_is_open = false
+		if animation_player.is_playing():
+			if animation_player.get_playing_speed() == 1.0:
+				animation_player.speed_scale = -1
+				ps_is_open2 = false
+			else:
+				animation_player.speed_scale = 1
+				ps_is_open2 = true
 		else:
-			ps_is_open = true
-			periodic_table.open()
-			laser_beam_2d.ps_is_open = true
-			animated_sprite.play("turn")
-			animation_player.play("ps_open")
-	
+			if ps_is_open2:
+				animation_player.play("ps_open")
+				animation_player.seek(1)
+				animation_player.speed_scale = -1
+				ps_is_open2 = false
+			else:
+				animation_player.play("ps_open")
+				animation_player.speed_scale = 1
+				ps_is_open2 = true
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * 2
-	
+			
 	var direction = 0
 	
 	if !ps_is_open:
