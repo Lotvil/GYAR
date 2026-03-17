@@ -47,6 +47,6 @@ func _on_door_area_body_exited(body: Node2D) -> void:
 			camera_2d.global_position.x = $markerLeft.global_position.x
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if x_lock == true:
 		camera_2d.global_position.y = player.global_position.y -324

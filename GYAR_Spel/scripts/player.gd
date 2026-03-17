@@ -11,26 +11,26 @@ const JUMP_VELOCITY = -1250.0
 
 
 @export var ps_is_open = false
-@export var ps_is_open2 = false
+var ps_is_open2 = false
+var playing_speed := 1.5
 
 func _process(_delta):
 	if Input.is_action_just_pressed("inventory"):
 		if animation_player.is_playing():
-			if animation_player.get_playing_speed() == 1.0:
-				animation_player.speed_scale = -1
+			if animation_player.get_playing_speed() == playing_speed:
+				animation_player.speed_scale = -1*playing_speed
 				ps_is_open2 = false
 			else:
-				animation_player.speed_scale = 1
+				animation_player.speed_scale = playing_speed
 				ps_is_open2 = true
 		else:
 			if ps_is_open2:
-				animation_player.play("ps_open")
-				animation_player.seek(1)
-				animation_player.speed_scale = -1
+				animation_player.play("ps_open", -1.0, 1.0, true)
+				animation_player.speed_scale = -1*playing_speed
 				ps_is_open2 = false
 			else:
 				animation_player.play("ps_open")
-				animation_player.speed_scale = 1
+				animation_player.speed_scale = playing_speed
 				ps_is_open2 = true
 
 

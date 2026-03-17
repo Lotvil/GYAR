@@ -6,9 +6,9 @@ var element_data : Dictionary
 var discovered := false
 var count := 0
 
-@onready var atomic_number: Label = $VBoxContainer/AtomicNumber
-@onready var symbol: Label = $VBoxContainer/Symbol
-@onready var counter: Label = $VBoxContainer/Count
+@onready var atomic_number: Label = $PanelContainer/VBoxContainer/AtomicNumber
+@onready var symbol: Label = $PanelContainer/VBoxContainer/Symbol
+@onready var counter: Label = $PanelContainer/VBoxContainer/Count
 
 func _ready() -> void:
 	add_to_group("elements")
