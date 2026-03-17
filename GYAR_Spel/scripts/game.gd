@@ -3,9 +3,7 @@ extends Node2D
 @export var block : Dictionary[String, BlockData]
 @onready var ground: TileMapLayer = $Node/Room
 @onready var laser: RayCast2D = $Player/ClawLaser/LaserBeam2D
-@onready var periodic_table: Control = $Player/PeriodicTable
-
-
+@onready var periodic_table: Control = $Player/Camera2D/PeriodicTable
 
 var broken_tiles_health : Dictionary = {}
 var current_block = "soil"

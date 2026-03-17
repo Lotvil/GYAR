@@ -5,7 +5,7 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -1250.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var periodic_table: Control = $PeriodicTable
+@onready var periodic_table: Control = $Camera2D/PeriodicTable
 @onready var laser_beam_2d: RayCast2D = $ClawLaser/LaserBeam2D
 
 

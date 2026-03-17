@@ -5,7 +5,7 @@
 extends RayCast2D
 
 ## Speed at which the laser extends when first fired, in pixels per seconds.
-@export var cast_speed := 7000.0
+@export var cast_speed := 8000.0
 ## Maximum length of the laser in pixels.
 @export var max_length := 1400.0
 ## Distance in pixels from the origin to start drawing and firing the laser.
@@ -52,9 +52,14 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	collide_with_bodies = !ps_is_open
 	if ps_is_open:
+		cast_speed = 20000.0
+		max_length = 2000.0
 		modulate = Color.AQUA
 	else:
+		cast_speed = 8000.0
+		max_length = 1400.0
 		modulate = Color.GREEN
+		
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos : Vector2 = to_local(get_global_mouse_position())
