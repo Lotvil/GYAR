@@ -100,9 +100,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4ail"]
-radius = 82.0
-height = 384.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ls1"]
+size = Vector2(11.142, 15.43)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4r5pv"]
 animations = [{
@@ -371,7 +370,9 @@ animation = &"turn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=595718116]
 z_index = 5
-shape = SubResource("CapsuleShape2D_i4ail")
+position = Vector2(0, -5.722046e-06)
+scale = Vector2(10.919999, 24.820055)
+shape = SubResource("RectangleShape2D_a8ls1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=978261423]
 position = Vector2(0, -324)
@@ -406,7 +407,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(4, -2)
-target_position = Vector2(1356.1534, -347.63174)
+target_position = Vector2(849, -139)
 start_distance = 90.0
 growth_time = 0.1
 

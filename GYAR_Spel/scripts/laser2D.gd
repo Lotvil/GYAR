@@ -1,6 +1,3 @@
-## Casts a laser along a raycast, emitting particles on the impact point.
-## Use `is_casting` to make the laser fire and stop.
-## You can attach it to a weapon or a ship; the laser will rotate with its parent.
 @tool
 extends RayCast2D
 
@@ -16,9 +13,6 @@ extends RayCast2D
 
 @export var damage_per_second: float = 3.0
 
-## If `true`, the laser is firing.
-## It plays appearing and disappearing animations when it's not animating.
-## See `appear()` and `disappear()` for more information.
 @export var is_casting := false: set = set_is_casting
 
 @export var ps_is_open := false

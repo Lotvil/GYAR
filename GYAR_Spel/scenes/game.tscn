@@ -79,4 +79,5 @@ offset_top = -3117.0
 offset_right = 7.0
 offset_bottom = -2077.0
 scale = Vector2(2, 2)
+mouse_filter = 2
 texture = ExtResource("13_kvuet")
