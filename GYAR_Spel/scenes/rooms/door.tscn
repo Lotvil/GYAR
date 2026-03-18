@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://bc3aekchl3cna" path="res://scripts/door.gd" id="1_hpvv5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f452"]
-size = Vector2(20, 73)
+size = Vector2(10, 73)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpvv5"]
-size = Vector2(20, 19.832764)
+size = Vector2(670.8353, 19.838068)
 
 [node name="Door" type="Node2D" unique_id=1496488519]
 scale = Vector2(3.3866436, 4.5339937)
@@ -23,8 +23,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="camStopArea" type="CollisionShape2D" parent="stopArea" unique_id=887615495]
-position = Vector2(0, -36.5)
-scale = Vector2(21.44, 1)
+position = Vector2(-107.19996, -36.499985)
+scale = Vector2(21.439997, 0.99999976)
 shape = SubResource("RectangleShape2D_5f452")
 
 [node name="doorArea" type="Area2D" parent="." unique_id=1062332454]
@@ -32,8 +32,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="door" type="CollisionShape2D" parent="doorArea" unique_id=1306721010]
-position = Vector2(0, -36.49229)
-scale = Vector2(0.31999913, 3.6800003)
+position = Vector2(107.333305, -36.50202)
+scale = Vector2(0.31999892, 3.679998)
 shape = SubResource("RectangleShape2D_hpvv5")
 
 [connection signal="body_entered" from="stopArea" to="." method="_on_stop_area_body_entered"]
