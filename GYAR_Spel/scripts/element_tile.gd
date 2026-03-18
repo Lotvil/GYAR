@@ -34,7 +34,7 @@ func update_visual():
 	if discovered:
 		modulate = category_color(element_data["kategori"])
 	else:
-		modulate = Color.GRAY
+		modulate = Color.DIM_GRAY
 
 
 func category_color(category:String):

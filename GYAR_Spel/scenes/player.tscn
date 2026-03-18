@@ -361,7 +361,6 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=2124404472]
 collision_layer = 2
 script = ExtResource("1_g2els")
-ps_is_open = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=740844094]
 z_index = 5
@@ -386,6 +385,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="PeriodicTable" parent="Camera2D" unique_id=860381347 instance=ExtResource("4_dqkch")]
+visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 4
 offset_left = -667.0
@@ -404,16 +404,12 @@ offset = Vector2(-21.16, -59.74)
 script = ExtResource("4_qfm1y")
 
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
-modulate = Color(0, 1, 1, 1)
+modulate = Color(0, 1, 0, 1)
 position = Vector2(4, -2)
-target_position = Vector2(1652.3967, -1126.7587)
-collide_with_bodies = false
-cast_speed = 20000.0
-max_length = 2000.0
+target_position = Vector2(-126.63378, -326.51318)
 start_distance = 90.0
 growth_time = 0.1
 damage_per_second = 10000.0
-ps_is_open = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
 libraries/ = SubResource("AnimationLibrary_fulsm")
