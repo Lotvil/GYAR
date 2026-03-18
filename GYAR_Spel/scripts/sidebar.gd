@@ -1,5 +1,7 @@
 extends PanelContainer
 
+const TILE = preload("res://scenes/compound.tscn")
+
 @onready var title: Label = $MarginContainer/VBoxContainer/Title
 @onready var count: Label = $MarginContainer/VBoxContainer/Count
 @onready var number: Label = $MarginContainer/VBoxContainer/Number

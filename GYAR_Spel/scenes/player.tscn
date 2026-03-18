@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://iqycqp0af16f" path="res://assets/sprites/turn/turn_around0002.png" id="10_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://ucfe40cip7hc" path="res://assets/sprites/turn/turn_around0003.png" id="11_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://c35ohjuvgj5kc" path="res://assets/sprites/turn/turn_around0004.png" id="12_fulsm"]
+[ext_resource type="Texture2D" uid="uid://c1i5ufxcus5h3" path="res://assets/sprites/world_tileset.png" id="14_qfm1y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_60mlk"]
 resource_name = "turn"
@@ -175,6 +176,30 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"turn"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D/Hotbar:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2D/Hotbar:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1392, -764)]
 }
 
 [sub_resource type="Animation" id="Animation_fulsm"]
@@ -350,6 +375,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [&"turn", &"turn"]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2D/Hotbar:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera2D/Hotbar:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1392, -764), Vector2(-800, -764)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fulsm"]
 _data = {
@@ -361,6 +410,7 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=2124404472]
 collision_layer = 2
 script = ExtResource("1_g2els")
+ps_is_open = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=740844094]
 z_index = 5
@@ -385,7 +435,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="PeriodicTable" parent="Camera2D" unique_id=860381347 instance=ExtResource("4_dqkch")]
-visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 4
 offset_left = -667.0
@@ -394,6 +443,138 @@ offset_right = 482.0
 offset_bottom = -116.0
 scale = Vector2(1.3, 1.367)
 metadata/_edit_use_anchors_ = true
+
+[node name="Hotbar" type="MarginContainer" parent="Camera2D" unique_id=1521840238]
+z_index = 6
+offset_left = -800.0
+offset_top = -764.0
+offset_right = -700.0
+offset_bottom = 92.0
+
+[node name="HotbarSlots" type="GridContainer" parent="Camera2D/Hotbar" unique_id=75988165]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+
+[node name="HotbarSlot1" type="Panel" parent="Camera2D/Hotbar/HotbarSlots" unique_id=1742812488]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Hotbar/HotbarSlots/HotbarSlot1" unique_id=2131829909]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("14_qfm1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HotbarSlot2" type="Panel" parent="Camera2D/Hotbar/HotbarSlots" unique_id=1904537576]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Hotbar/HotbarSlots/HotbarSlot2" unique_id=1993176390]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("14_qfm1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HotbarSlot3" type="Panel" parent="Camera2D/Hotbar/HotbarSlots" unique_id=1705501505]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Hotbar/HotbarSlots/HotbarSlot3" unique_id=1013060433]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("14_qfm1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HotbarSlot4" type="Panel" parent="Camera2D/Hotbar/HotbarSlots" unique_id=447861995]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Hotbar/HotbarSlots/HotbarSlot4" unique_id=705533721]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("14_qfm1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HotbarSlot5" type="Panel" parent="Camera2D/Hotbar/HotbarSlots" unique_id=294778177]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Hotbar/HotbarSlots/HotbarSlot5" unique_id=1720543921]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("14_qfm1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HotbarSlot6" type="Panel" parent="Camera2D/Hotbar/HotbarSlots" unique_id=312145105]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Hotbar/HotbarSlots/HotbarSlot6" unique_id=1130415103]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("14_qfm1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HotbarSlot7" type="Panel" parent="Camera2D/Hotbar/HotbarSlots" unique_id=316023910]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Hotbar/HotbarSlots/HotbarSlot7" unique_id=1384052195]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("14_qfm1y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HotbarSlot8" type="Panel" parent="Camera2D/Hotbar/HotbarSlots" unique_id=1534947505]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/Hotbar/HotbarSlots/HotbarSlot8" unique_id=998351300]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("14_qfm1y")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ClawLaser" type="AnimatedSprite2D" parent="." unique_id=197824598]
 z_index = 7
@@ -404,12 +585,16 @@ offset = Vector2(-21.16, -59.74)
 script = ExtResource("4_qfm1y")
 
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
-modulate = Color(0, 1, 0, 1)
+modulate = Color(0, 1, 1, 1)
 position = Vector2(4, -2)
-target_position = Vector2(-126.63378, -326.51318)
+target_position = Vector2(653.053, -1807.302)
+collide_with_bodies = false
+cast_speed = 20000.0
+max_length = 2000.0
 start_distance = 90.0
 growth_time = 0.1
 damage_per_second = 10000.0
+ps_is_open = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
 libraries/ = SubResource("AnimationLibrary_fulsm")

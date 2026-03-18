@@ -6,7 +6,9 @@
 script = ExtResource("1_10fl1")
 tile_name = "sand"
 atlas_coords = Array[Vector2i]([Vector2i(2, 1), Vector2i(3, 0), Vector2i(3, 1)])
+source_id = 1
 elements = Dictionary[String, int]({
 "Si": 10
 })
+is_placable = true
 metadata/_custom_type_script = "uid://d2ntbd2ve77q6"

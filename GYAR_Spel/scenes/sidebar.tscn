@@ -58,3 +58,11 @@ theme_override_font_sizes/bold_italics_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
 theme_override_font_sizes/mono_font_size = 12
 fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1886117991]
+layout_mode = 2
+
+[node name="Recipes" type="Label" parent="MarginContainer/VBoxContainer" unique_id=150345451]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Föreningar:"

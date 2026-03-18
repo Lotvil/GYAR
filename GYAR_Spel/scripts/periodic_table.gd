@@ -26,19 +26,6 @@ func open():
 func close():
 	visible = false
 
-
-
-"""
-func resize_tiles():
-
-	var window_width = 900
-
-	var tile_size = window_width / 18.0
-
-	for tile in get_tree().get_nodes_in_group("elements"):
-
-		tile.custom_minimum_size = Vector2(tile_size, tile_size)
-"""
 func load_elements():
 
 	var file = FileAccess.open("res://data/elements.csv", FileAccess.READ)
