@@ -1,7 +1,10 @@
 extends Control
 
+
 func _ready() -> void:
+	visible = false
 	$AnimationPlayer.play("RESET")
+	
 
 func resume():
 	get_tree().paused = false
@@ -31,3 +34,6 @@ func _on_restart_pressed() -> void:
 func _on_quit_pressed() -> void:
 	resume()
 	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+	
+
+	
