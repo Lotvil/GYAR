@@ -4,13 +4,11 @@ extends Control
 func _ready() -> void:
 	visible = false
 	$AnimationPlayer.play("RESET")
-	
 
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
-	
-	
+
 func pause():
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")

@@ -20,6 +20,8 @@ func _ready():
 
 	load_elements()
 	build_table()
+	
+	sidebar.bind_key.connect(_refresh_sidebar)
 
 func open():
 	visible = true
@@ -160,3 +162,19 @@ func get_unlocked_blocks() -> Array:
 			unlocked.append(tile_name)
 
 	return unlocked
+
+func _refresh_sidebar(_block_name, key):
+	if last_open_element == "-1":
+		return
+
+	var tile = tiles_by_symbol[last_open_element]
+	var unlocked_blocks = get_unlocked_blocks()
+
+	sidebar.show_element(
+		tile.element_data,
+		tile.discovered,
+		tile.count,
+		unlocked_blocks,
+		blocks,
+		key
+	)

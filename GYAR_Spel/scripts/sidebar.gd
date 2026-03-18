@@ -16,6 +16,7 @@ extends PanelContainer
 signal block_selected(tile_name)
 
 var hovered_block : String = ""
+var last_tile_name := ""
 
 signal bind_key(block_name, key)
 
@@ -27,15 +28,14 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 
 		if event.keycode >= KEY_1 and event.keycode <= KEY_8:
-
+			
+			last_tile_name = hovered_block
 			emit_signal("bind_key", hovered_block, event.keycode)
-			
-			
 
 func _on_block_pressed(tile_name):
 	emit_signal("block_selected", tile_name)
 
-func show_element(data, discovered, counts, unlocked_blocks, blocks):
+func show_element(data, discovered, counts, unlocked_blocks, blocks, last_key := -1):
 	
 	for child in compund_container.get_children():
 		child.queue_free()
@@ -77,6 +77,8 @@ func show_element(data, discovered, counts, unlocked_blocks, blocks):
 
 		var btn = LinkButton.new()
 		var key_text = get_bound_key_text(tile_name)
+		if !last_key == -1 and last_tile_name == tile_name:
+			key_text = str(last_key - KEY_0)
 
 		btn.text = tile_name.capitalize() + " [" + key_text + "]"
 

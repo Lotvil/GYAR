@@ -22,7 +22,8 @@ func _on_laser_hit_tile(tile_pos: Vector2i, damage: float):
 	var tile_name
 	if data:
 		tile_name = data.get_custom_data("tile_name")
-		take_damage(tile_name, tile_pos, damage)
+		if !tile_name == "":
+			take_damage(tile_name, tile_pos, damage)
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -99,7 +100,6 @@ func switch_block(event):
 
 		if keybinds.has(key):
 			current_block = keybinds[key]
-			print("current_block is" + current_block)
 
 func _on_bind_key(block_name, key):
 
@@ -109,9 +109,6 @@ func _on_bind_key(block_name, key):
 			break
 	
 	keybinds[key] = block_name
-
-	print("Bound ", block_name, " to key ", key)
-	print(keybinds)
 
 func is_placable(event, tile_pos) -> bool:
 	var r = true
