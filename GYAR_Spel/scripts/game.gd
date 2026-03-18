@@ -1,15 +1,20 @@
 extends Node2D
  
-@export var block : Dictionary[String, BlockData]
 @onready var ground: TileMapLayer = $Node/Room
 @onready var laser: RayCast2D = $Player/ClawLaser/LaserBeam2D
 @onready var periodic_table: Control = $Player/Camera2D/PeriodicTable
 
+@export var block : Dictionary[String, BlockData]
+
 var broken_tiles_health : Dictionary = {}
 var current_block = "soil"
+var keybinds : Dictionary = {}  # int -> block_name
 
 func _ready():
+	periodic_table.blocks = block
 	laser.hit_tile.connect(_on_laser_hit_tile)
+	periodic_table.sidebar.block_selected.connect(_on_block_selected)
+	periodic_table.sidebar.bind_key.connect(_on_bind_key)
 
 func _on_laser_hit_tile(tile_pos: Vector2i, damage: float):
 
@@ -84,14 +89,29 @@ func has_adjacent_tile(tile_pos: Vector2i) -> bool:
 	return false
  
 func switch_block(event):
-	if event.keycode == KEY_1 and event.pressed:
-		current_block = "soil"
-	if event.keycode == KEY_2 and event.pressed:
-		current_block = "mud"
-	if event.keycode == KEY_3 and event.pressed:
-		current_block = "stone"
-	if event.keycode == KEY_4 and event.pressed:
-		current_block = "wood"
+
+	if !event.pressed:
+		return
+
+	var key = event.keycode
+
+	if key >= KEY_1 and key <= KEY_8:
+
+		if keybinds.has(key):
+			current_block = keybinds[key]
+			print("current_block is" + current_block)
+
+func _on_bind_key(block_name, key):
+
+	for k in keybinds:
+		if keybinds[k] == block_name:
+			keybinds.erase(k)
+			break
+	
+	keybinds[key] = block_name
+
+	print("Bound ", block_name, " to key ", key)
+	print(keybinds)
 
 func is_placable(event, tile_pos) -> bool:
 	var r = true
@@ -113,3 +133,6 @@ func is_placable(event, tile_pos) -> bool:
 		return true
 	
 	return false
+
+func _on_block_selected(block_name):
+	current_block = block_name

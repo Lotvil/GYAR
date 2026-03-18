@@ -7,6 +7,7 @@ const TILE = preload("res://scenes/element_tile.tscn")
 @onready var grid: GridContainer = $VSplitContainer/HSplitContainer/TableGrid
 @onready var sidebar: PanelContainer = $VSplitContainer/HSplitContainer/Sidebar
 
+@export var blocks : Dictionary[String, BlockData]
 
 var elements = []
 var tiles = {}
@@ -96,9 +97,12 @@ func build_table():
 		grid.move_child(tile, index)
 
 func _on_element_clicked(data, discovered, count):
+
 	last_open_element = data["symbol"]
-	
-	sidebar.show_element(data, discovered, count)
+
+	var unlocked_blocks = get_unlocked_blocks()
+
+	sidebar.show_element(data, discovered, count, unlocked_blocks, blocks)
 
 func add_element(symbol:String, amount:int = 1):
 	
@@ -127,6 +131,32 @@ func check_element(symbol:String, amount:int = 1):
 		return true
 	
 	return false
-	
-	
-	
+
+
+func get_unlocked_blocks() -> Array:
+
+	var unlocked = []
+
+	for tile_name in blocks:
+
+		var block = blocks[tile_name]
+
+		if !block.is_placable:
+			continue
+
+		var valid = true
+
+		for symbol in block.elements:
+
+			if tiles_by_symbol.has(symbol):
+				var tile = tiles_by_symbol[symbol]
+				
+				if !tile.discovered == true:
+					valid = false
+			else:
+				valid = false
+
+		if valid:
+			unlocked.append(tile_name)
+
+	return unlocked

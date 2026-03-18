@@ -13,4 +13,5 @@ elements = Dictionary[String, int]({
 "Fe": 2,
 "Si": 1
 })
+is_placable = true
 metadata/_custom_type_script = "uid://d2ntbd2ve77q6"

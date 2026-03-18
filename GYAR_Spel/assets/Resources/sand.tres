@@ -10,5 +10,4 @@ source_id = 1
 elements = Dictionary[String, int]({
 "Si": 10
 })
-is_placable = true
 metadata/_custom_type_script = "uid://d2ntbd2ve77q6"

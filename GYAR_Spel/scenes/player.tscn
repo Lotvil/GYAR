@@ -406,7 +406,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(4, -2)
-target_position = Vector2(444, 394)
+target_position = Vector2(-36.980255, 214.38779)
 start_distance = 90.0
 growth_time = 0.1
 damage_per_second = 10000.0
