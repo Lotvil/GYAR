@@ -3,12 +3,10 @@
 [ext_resource type="Script" uid="uid://blhyjwq0th2fd" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://bi0qoyv8qt2fy" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://d2ntbd2ve77q6" path="res://scripts/BlockData.gd" id="2_dinhu"]
-[ext_resource type="Resource" uid="uid://d2w6houe3753e" path="res://assets/Resources/soil.tres" id="3_kvuet"]
 [ext_resource type="PackedScene" uid="uid://chnx0p5yiu86y" path="res://scenes/kill_zone.tscn" id="3_lnu2h"]
-[ext_resource type="Resource" uid="uid://5u3lmgvhqddn" path="res://assets/Resources/mud.tres" id="4_trtic"]
-[ext_resource type="Resource" uid="uid://dgpcs6kuehh33" path="res://assets/Resources/stone.tres" id="5_ir15t"]
-[ext_resource type="Resource" uid="uid://bkvoojr00uymb" path="res://assets/Resources/wood.tres" id="6_kvuet"]
-[ext_resource type="Resource" uid="uid://bdmoxg1f4juxl" path="res://assets/Resources/sand.tres" id="7_kvuet"]
+[ext_resource type="Resource" uid="uid://ceus2ddkcrrsv" path="res://assets/resources/jord.tres" id="3_vtaks"]
+[ext_resource type="Resource" uid="uid://cnk88jspd5o2q" path="res://assets/resources/gräs.tres" id="4_kvpfn"]
+[ext_resource type="Resource" uid="uid://xksvy662er1l" path="res://assets/resources/sten.tres" id="5_dinhu"]
 [ext_resource type="Texture2D" uid="uid://c6pgn7mwmlmrj" path="res://assets/sprites/tageTiles.png" id="10_dinhu"]
 [ext_resource type="PackedScene" uid="uid://dagjtjc7sdotu" path="res://scenes/rooms/door.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://e1x7kxi5tk0s" path="res://scenes/pause_menu.tscn" id="12_kvuet"]
@@ -20,26 +18,30 @@ texture = ExtResource("10_dinhu")
 texture_region_size = Vector2i(50, 50)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+0:0/0/custom_data_0 = &"jord"
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+0:1/0/custom_data_0 = &"gräs"
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+0:2/0/custom_data_0 = &"sten"
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
 
 [sub_resource type="TileSet" id="TileSet_trtic"]
 tile_size = Vector2i(50, 50)
 physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 2
+custom_data_layer_0/name = "tile_name"
+custom_data_layer_0/type = 21
 sources/0 = SubResource("TileSetAtlasSource_kvuet")
 
 [node name="Game" type="Node2D" unique_id=909740097]
 script = ExtResource("1_gee14")
 block = Dictionary[String, ExtResource("2_dinhu")]({
-"mud": ExtResource("4_trtic"),
-"sand": ExtResource("7_kvuet"),
-"soil": ExtResource("3_kvuet"),
-"stone": ExtResource("5_ir15t"),
-"wood": ExtResource("6_kvuet")
+"gräs": ExtResource("4_kvpfn"),
+"jord": ExtResource("3_vtaks"),
+"sten": ExtResource("5_dinhu")
 })
 
 [node name="Player" parent="." unique_id=2124404472 groups=["player"] instance=ExtResource("1_uwrxv")]
@@ -58,6 +60,7 @@ shape = SubResource("WorldBoundaryShape2D_lbhrr")
 [node name="TileMapLayer" type="TileMapLayer" parent="room" unique_id=1139680260]
 tile_map_data = PackedByteArray("AAATAOv/AAAAAAEAAAASAOv/AAAAAAEAAAARAOv/AAAAAAEAAAAQAOv/AAAAAAEAAAAPAOv/AAAAAAEAAAAOAOv/AAAAAAEAAAANAOv/AAAAAAEAAAAMAOv/AAAAAAEAAAALAOv/AAAAAAEAAAAKAOv/AAAAAAEAAAAJAOv/AAAAAAEAAAAIAOv/AAAAAAEAAAAHAOv/AAAAAAEAAAAGAOv/AAAAAAEAAAAFAOv/AAAAAAEAAAAEAOv/AAAAAAEAAAADAOv/AAAAAAEAAAACAOv/AAAAAAEAAAABAOv/AAAAAAEAAAAAAOv/AAAAAAEAAAD//+v/AAAAAAEAAAD+/+v/AAAAAAEAAAD9/+v/AAAAAAEAAAD8/+v/AAAAAAEAAAD7/+v/AAAAAAEAAAD6/+v/AAAAAAEAAAAUAOv/AAAAAAEAAAAVAOv/AAAAAAEAAAAWAOv/AAAAAAEAAAAXAOv/AAAAAAEAAAAYAOv/AAAAAAEAAAAZAOv/AAAAAAEAAAAaAOv/AAAAAAEAAAAbAOv/AAAAAAEAAAAcAOv/AAAAAAEAAAAdAOv/AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_trtic")
+physics_quadrant_size = 10
 
 [node name="doors" type="Node" parent="." unique_id=916950305]
 

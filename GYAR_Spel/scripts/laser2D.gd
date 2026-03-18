@@ -14,7 +14,7 @@ extends RayCast2D
 @export var growth_time := 0.05
 @export var color := Color.WHITE: set = set_color
 
-@export var damage_per_second: float = 100.0
+@export var damage_per_second: float = 3.0
 
 ## If `true`, the laser is firing.
 ## It plays appearing and disappearing animations when it's not animating.
@@ -34,7 +34,7 @@ var finished_appearing := false
 
 @onready var line_width := line_2d.width
 
-@onready var ground: TileMapLayer = $"../../../Node/Room"
+@onready var ground: TileMapLayer = $"../../../room/TileMapLayer"
 
 signal hit_tile(tile_pos: Vector2i, damage: float)
 
