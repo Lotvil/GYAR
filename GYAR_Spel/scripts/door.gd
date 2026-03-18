@@ -1,8 +1,5 @@
 extends Node2D
 
-var enterSide :String
-var x_lock :bool
-
 var touchLeft: bool
 var touchRight: bool
 
