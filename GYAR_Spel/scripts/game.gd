@@ -1,6 +1,6 @@
 extends Node2D
  
-@onready var ground: TileMapLayer = $Node/Room
+@onready var ground: TileMapLayer = $room/TileMapLayer
 @onready var laser: RayCast2D = $Player/ClawLaser/LaserBeam2D
 @onready var periodic_table: Control = $Player/Camera2D/PeriodicTable
 
@@ -11,6 +11,7 @@ var current_block = "soil"
 var keybinds : Dictionary = {}  # int -> block_name
 
 func _ready():
+	print(block)
 	periodic_table.blocks = block
 	laser.hit_tile.connect(_on_laser_hit_tile)
 	periodic_table.sidebar.block_selected.connect(_on_block_selected)
