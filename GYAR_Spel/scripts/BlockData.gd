@@ -7,3 +7,4 @@ class_name BlockData
 @export var source_id: int = 0
 @export var elements: Dictionary[String, int] = {}
 @export var is_placable: bool = false
+@export var laser_lvl: int = 1

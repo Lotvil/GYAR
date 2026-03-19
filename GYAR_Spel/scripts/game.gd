@@ -7,6 +7,7 @@ extends Node2D
 
 
 @export var block : Dictionary[String, BlockData]
+var laser_lvl := 1
 
 var broken_tiles_health : Dictionary = {}
 var current_block = ""
@@ -25,7 +26,8 @@ func _on_laser_hit_tile(tile_pos: Vector2i, damage: float):
 	if data:
 		tile_name = data.get_custom_data("tile_name")
 		if !tile_name == "":
-			take_damage(tile_name, tile_pos, damage)
+			if laser_lvl >= block[tile_name].laser_lvl:
+				take_damage(tile_name, tile_pos, damage)
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -44,7 +46,7 @@ func get_snapped_position(global_pos: Vector2) -> Vector2i:
 	return tile_pos
 
 func take_damage(tile_name: StringName, tile_pos: Vector2i, amount: float = 1):
-
+	
 	if tile_pos not in broken_tiles_health:
 		broken_tiles_health[tile_pos] = block[tile_name].health
 
@@ -141,5 +143,12 @@ func _on_block_selected(block_name):
 	current_block = block_name
 
 func check_uppgrades(tile_name):
+	#Building permit
 	if tile_name == "bulb":
 		sidebar.build_permit = true
+	
+	#Laser level 2
+	if tile_name == "laser2":
+		laser_lvl = 2
+		laser.damage_per_second = 6.0
+	

@@ -11,4 +11,5 @@ elements = Dictionary[String, int]({
 "Al": 2
 })
 is_placable = true
+laser_lvl = 2
 metadata/_custom_type_script = "uid://d2ntbd2ve77q6"
