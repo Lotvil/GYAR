@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://cktp6h5u60qhx"]
-
-[ext_resource type="Script" uid="uid://c2h7w4e8ddopp" path="res://scripts/compound.gd" id="1_ukxyv"]
-
-[node name="Compound" type="LinkButton" unique_id=383392370]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 14
-script = ExtResource("1_ukxyv")
