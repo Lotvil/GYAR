@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxn0k6ivjdl0l"
-path="res://.godot/imported/klo.png-ff9a73b9777baac4a99641266d15fcde.ctex"
+uid="uid://f572gukoaonm"
+path="res://.godot/imported/ny_ga_vanster0001.png-090a3aea4d6f2beb959787351c401d97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/klo.png"
-dest_files=["res://.godot/imported/klo.png-ff9a73b9777baac4a99641266d15fcde.ctex"]
+source_file="res://assets/sprites/ny_vanster/ny_ga_vanster0001.png"
+dest_files=["res://.godot/imported/ny_ga_vanster0001.png-090a3aea4d6f2beb959787351c401d97.ctex"]
 
 [params]
 

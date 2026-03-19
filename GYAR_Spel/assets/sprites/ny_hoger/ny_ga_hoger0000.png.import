@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxn0k6ivjdl0l"
-path="res://.godot/imported/klo.png-ff9a73b9777baac4a99641266d15fcde.ctex"
+uid="uid://f5jxxb0bj28u"
+path="res://.godot/imported/ny_ga_hoger0000.png-db2be12b9687fd9975b2dff20e114bb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/klo.png"
-dest_files=["res://.godot/imported/klo.png-ff9a73b9777baac4a99641266d15fcde.ctex"]
+source_file="res://assets/sprites/ny_hoger/ny_ga_hoger0000.png"
+dest_files=["res://.godot/imported/ny_ga_hoger0000.png-db2be12b9687fd9975b2dff20e114bb9.ctex"]
 
 [params]
 
