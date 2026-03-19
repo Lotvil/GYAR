@@ -128,6 +128,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ls1"]
 size = Vector2(11.142, 15.43)
 
+[sub_resource type="Gradient" id="Gradient_4ni07"]
+offsets = PackedFloat32Array(0.6827731, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l71n6"]
+gradient = SubResource("Gradient_4ni07")
+width = 1888
+height = 932
+fill = 2
+fill_from = Vector2(0.50769234, 0.51452994)
+fill_to = Vector2(0.9732704, 0.05175881)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_4r5pv"]
 animations = [{
 "frames": [{
@@ -199,6 +211,30 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"turn"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D/PTLight:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.343975, 0.72508234, 0.947195, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2D/PTLight:energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_fulsm"]
@@ -374,6 +410,30 @@ tracks/7/keys = {
 "update": 1,
 "values": [&"turn", &"turn"]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2D/PTLight:color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.34509805, 0.7254902, 0.9490196, 0), Color(0.5837929, 0.82731646, 0.9840457, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera2D/PTLight:energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.03333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fulsm"]
 _data = {
@@ -419,10 +479,17 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="PTLight" type="PointLight2D" parent="Camera2D" unique_id=759165363]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(86.499985, -396)
+color = Color(0.343975, 0.72508234, 0.947195, 1)
+energy = 0.0
+texture = SubResource("GradientTexture2D_l71n6")
+
 [node name="PeriodicTable" parent="Camera2D" unique_id=860381347 instance=ExtResource("4_dqkch")]
 visible = false
 modulate = Color(1, 1, 1, 0)
-z_index = 4
+z_index = 5
 offset_left = -667.0
 offset_top = -762.0
 offset_right = 482.0
@@ -432,7 +499,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ClawLaser" type="AnimatedSprite2D" parent="." unique_id=197824598]
 z_index = 7
-position = Vector2(-5.9604645e-08, -158)
+position = Vector2(-3.5527137e-15, -170.00002)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_4r5pv")
 centered = false
@@ -442,12 +509,13 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(1032.2908, -945.7145)
+target_position = Vector2(71.76803, 14.358292)
+start_distance = 90.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
 libraries/ = SubResource("AnimationLibrary_fulsm")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=330599533]
+[node name="PlayerLight" type="PointLight2D" parent="." unique_id=330599533]
 position = Vector2(1, 0)
 scale = Vector2(2622.6555, 2528.1255)
 energy = 0.5

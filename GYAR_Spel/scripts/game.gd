@@ -7,7 +7,7 @@ extends Node2D
 @export var block : Dictionary[String, BlockData]
 
 var broken_tiles_health : Dictionary = {}
-var current_block = "soil"
+var current_block = ""
 var keybinds : Dictionary = {}  # int -> block_name
 
 func _ready():
@@ -112,6 +112,9 @@ func _on_bind_key(block_name, key):
 
 func is_placable(event, tile_pos) -> bool:
 	var r = true
+	
+	if current_block == "":
+		return false
 	
 	if event.button_index != MOUSE_BUTTON_RIGHT:
 		return false
