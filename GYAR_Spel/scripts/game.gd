@@ -3,6 +3,8 @@ extends Node2D
 @onready var ground: TileMapLayer = $room/ground
 @onready var laser: RayCast2D = $Player/ClawLaser/LaserBeam2D
 @onready var periodic_table: Control = $Player/Camera2D/PeriodicTable
+@onready var sidebar: PanelContainer = $Player/Camera2D/PeriodicTable/VSplitContainer/HSplitContainer/Sidebar
+
 
 @export var block : Dictionary[String, BlockData]
 
@@ -55,6 +57,7 @@ func take_damage(tile_name: StringName, tile_pos: Vector2i, amount: float = 1):
 		ground.erase_cell(tile_pos)
 		broken_tiles_health.erase(tile_pos)
 		add_elements(tile_name)
+		check_uppgrades(tile_name)
 		return
 
 	var stage_count = block[tile_name].atlas_coords.size()
@@ -136,3 +139,7 @@ func is_placable(event, tile_pos) -> bool:
 
 func _on_block_selected(block_name):
 	current_block = block_name
+
+func check_uppgrades(tile_name):
+	if tile_name == "bulb":
+		sidebar.build_permit = true

@@ -12,6 +12,8 @@ extends PanelContainer
 @onready var compund_container: VBoxContainer = $MarginContainer/VBoxContainer/CompundContainer
 @onready var game: Node2D = $"../../../../../.."
 
+@export var build_permit := false
+
 
 signal block_selected(tile_name)
 
@@ -79,11 +81,15 @@ func show_element(data, discovered, counts, unlocked_blocks, blocks, last_key :=
 		var key_text = get_bound_key_text(tile_name)
 		if !last_key == -1 and last_tile_name == tile_name:
 			key_text = str(last_key - KEY_0)
+		
+		if build_permit:
+			btn.text = tile_name.capitalize() + " [" + key_text + "]"
 
-		btn.text = tile_name.capitalize() + " [" + key_text + "]"
-
-		btn.mouse_entered.connect(_on_button_hover.bind(tile_name))
-		btn.mouse_exited.connect(_on_button_exit)
+			btn.mouse_entered.connect(_on_button_hover.bind(tile_name))
+			btn.mouse_exited.connect(_on_button_exit)
+		
+		else:
+			btn.text = tile_name.capitalize()
 
 		compund_container.add_child(btn)
 

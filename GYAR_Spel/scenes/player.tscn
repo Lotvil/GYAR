@@ -128,12 +128,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ls1"]
 size = Vector2(11.142, 15.43)
 
-[sub_resource type="Gradient" id="Gradient_4ni07"]
+[sub_resource type="Gradient" id="Gradient_a38lo"]
 offsets = PackedFloat32Array(0.6827731, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_l71n6"]
-gradient = SubResource("Gradient_4ni07")
+gradient = SubResource("Gradient_a38lo")
 width = 1888
 height = 932
 fill = 2
@@ -442,11 +442,11 @@ _data = {
 &"ps_open": SubResource("Animation_qfm1y")
 }
 
-[sub_resource type="Gradient" id="Gradient_a38lo"]
+[sub_resource type="Gradient" id="Gradient_4ni07"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_4ni07"]
-gradient = SubResource("Gradient_a38lo")
+gradient = SubResource("Gradient_4ni07")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8406593, 0.85897434)
@@ -484,6 +484,7 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(86.499985, -396)
 color = Color(0.343975, 0.72508234, 0.947195, 1)
 energy = 0.0
+range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_l71n6")
 
 [node name="PeriodicTable" parent="Camera2D" unique_id=860381347 instance=ExtResource("4_dqkch")]
@@ -509,7 +510,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(71.76803, 14.358292)
+target_position = Vector2(907.0335, 1066.4382)
 start_distance = 90.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]

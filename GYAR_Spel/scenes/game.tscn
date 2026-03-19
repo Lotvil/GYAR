@@ -67,6 +67,15 @@ fog_light_energy = 0.23
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dinhu"]
 gradient = SubResource("Gradient_kvpfn")
 
+[sub_resource type="Gradient" id="Gradient_a38lo"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kvpfn"]
+gradient = SubResource("Gradient_a38lo")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8406593, 0.85897434)
+
 [node name="Game" type="Node2D" unique_id=909740097]
 script = ExtResource("1_gee14")
 block = Dictionary[String, ExtResource("2_dinhu")]({
@@ -104,6 +113,7 @@ offset_bottom = -2077.0
 scale = Vector2(2, 2)
 mouse_filter = 2
 texture = ExtResource("13_kvuet")
+metadata/_edit_use_anchors_ = true
 
 [node name="doors" type="Node" parent="." unique_id=916950305]
 
@@ -132,9 +142,9 @@ shadow_enabled = true
 shadow_filter = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="Light" unique_id=1070960396]
-position = Vector2(-179.96584, -3347.0625)
+position = Vector2(-190.35959, -3401.9795)
 rotation = -1.9006636
-scale = Vector2(54.79921, 14.280874)
+scale = Vector2(59.614544, 14.018106)
 skew = 0.32986724
 energy = 0.5
 texture = SubResource("GradientTexture2D_dinhu")
@@ -148,3 +158,11 @@ offset_right = 5431.0
 offset_bottom = 4071.0
 mouse_filter = 2
 color = Color(0.2966023, 0.2966023, 0.2966023, 0.48235294)
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerLight" type="PointLight2D" parent="Light" unique_id=1196740301]
+position = Vector2(-11575, 1273.0001)
+scale = Vector2(1143.22, 1102.0641)
+energy = 0.5
+texture = SubResource("GradientTexture2D_kvpfn")
+texture_scale = 0.01
