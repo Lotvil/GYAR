@@ -12,7 +12,7 @@ extends PanelContainer
 @onready var compund_container: VBoxContainer = $MarginContainer/VBoxContainer/CompundContainer
 @onready var game: Node2D = $"../../../../../.."
 
-@export var build_permit := true
+@export var build_permit := false
 
 
 signal block_selected(tile_name)

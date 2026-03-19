@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BlockData" format=3 uid="uid://ds3k1wl2deee8"]
+
+[ext_resource type="Script" uid="uid://d2ntbd2ve77q6" path="res://scripts/BlockData.gd" id="1_mrexi"]
+
+[resource]
+script = ExtResource("1_mrexi")
+tile_name = "gräs_dark"
+health = 1
+atlas_coords = Array[Vector2i]([Vector2i(1, 1)])
+elements = Dictionary[String, int]({
+"C": 6,
+"H": 12,
+"O": 6
+})
+metadata/_custom_type_script = "uid://d2ntbd2ve77q6"
