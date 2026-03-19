@@ -433,7 +433,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(94.64945, 77.098206)
+target_position = Vector2(397.11154, 313.60522)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
 libraries/ = SubResource("AnimationLibrary_fulsm")
