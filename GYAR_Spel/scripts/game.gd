@@ -148,7 +148,8 @@ func check_uppgrades(tile_name):
 		sidebar.build_permit = true
 	
 	#Laser level 2
-	if tile_name == "laser2":
+	if tile_name == "laser":
 		laser_lvl = 2
 		laser.damage_per_second = 6.0
+		laser.color = Color.RED
 	

@@ -3,7 +3,7 @@ extends Button
 signal element_clicked(data)
 
 var element_data : Dictionary
-var discovered := true
+var discovered := false
 var count := 0
 
 @onready var atomic_number: Label = $PanelContainer/VBoxContainer/AtomicNumber

@@ -9,7 +9,7 @@ extends RayCast2D
 @export var start_distance := 120.0
 ## Base duration of the tween animation in seconds.
 @export var growth_time := 0.1
-@export var color := Color.WHITE: set = set_color
+@export var color := Color.GREEN
 
 @export var damage_per_second: float = 3.0
 
@@ -33,7 +33,6 @@ var finished_appearing := false
 signal hit_tile(tile_pos: Vector2i, damage: float)
 
 func _ready() -> void:
-	set_color(color)
 	set_is_casting(is_casting)
 	line_2d.points[0] = Vector2.RIGHT * start_distance
 	line_2d.points[1] = Vector2.ZERO
@@ -52,7 +51,7 @@ func _process(_delta) -> void:
 	else:
 		cast_speed = 8000.0
 		max_length = 1400.0
-		modulate = Color.GREEN
+		modulate = color
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos : Vector2 = to_local(get_global_mouse_position())
@@ -142,15 +141,3 @@ func disappear() -> void:
 	tween = create_tween()
 	tween.tween_property(line_2d, "width", 0.0, growth_time).from_current()
 	tween.tween_callback(line_2d.hide)
-
-
-func set_color(new_color: Color) -> void:
-	color = new_color
-
-	if line_2d == null:
-		return
-
-	line_2d.modulate = new_color
-	casting_particles.modulate = new_color
-	collision_particles.modulate = new_color
-	beam_particles.modulate = new_color
