@@ -45,7 +45,7 @@ curve = SubResource("6")
 [sub_resource type="ParticleProcessMaterial" id="8"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(384.2543, 20, 1)
+emission_box_extents = Vector3(272.89832, 20, 1)
 direction = Vector3(-1, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
@@ -68,7 +68,8 @@ scale_curve = SubResource("4")
 color_ramp = SubResource("2")
 
 [node name="LaserBeam2D" type="RayCast2D" unique_id=1495494002]
-target_position = Vector2(-936.79, -720.1741)
+modulate = Color(0, 1, 0, 1)
+target_position = Vector2(-491.48, -401.1943)
 collision_mask = 3
 script = ExtResource("1")
 is_casting = true
@@ -76,7 +77,7 @@ is_casting = true
 [node name="Line2D" type="Line2D" parent="." unique_id=993000799]
 unique_name_in_owner = true
 visible = false
-points = PackedVector2Array(40, 0, -936.79, -720.1741)
+points = PackedVector2Array(60, 0, -491.48, -401.1943)
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -85,7 +86,7 @@ sharp_limit = 8.0
 [node name="CastingParticles2D" type="GPUParticles2D" parent="." unique_id=1911363982]
 unique_name_in_owner = true
 show_behind_parent = true
-position = Vector2(40, 0)
+position = Vector2(60, 0)
 emitting = false
 texture = ExtResource("2")
 lifetime = 0.3
@@ -94,7 +95,7 @@ process_material = SubResource("5")
 
 [node name="BeamParticles2D" type="GPUParticles2D" parent="." unique_id=498318595]
 unique_name_in_owner = true
-position = Vector2(-448.395, -360.08704)
+position = Vector2(-215.73999, -200.59715)
 emitting = false
 amount = 50
 texture = ExtResource("2")
@@ -116,7 +117,7 @@ process_material = SubResource("9")
 [node name="EndParticles2D" type="GPUParticles2D" parent="." unique_id=256949182]
 unique_name_in_owner = true
 show_behind_parent = true
-position = Vector2(-936.79, -720.1741)
+position = Vector2(-491.48, -401.1943)
 emitting = false
 texture = ExtResource("2")
 lifetime = 0.3

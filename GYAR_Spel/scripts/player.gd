@@ -8,13 +8,27 @@ const JUMP_VELOCITY = -1250.0
 @onready var periodic_table: Control = $Camera2D/PeriodicTable
 @onready var laser_beam_2d: RayCast2D = $ClawLaser/LaserBeam2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var claw_laser: AnimatedSprite2D = $ClawLaser
 
 
 @export var ps_is_open = false
 var ps_is_open2 = false
 var playing_speed := 1.5
 
+@export var flip = false
+
 func _process(_delta):
+	if ps_is_open:
+		laser_beam_2d.z_index = 5
+		claw_laser.z_index = 5
+	else:
+		if flip:
+			laser_beam_2d.z_index = 1
+			claw_laser.z_index = 1
+		else:
+			laser_beam_2d.z_index = 5
+			claw_laser.z_index = 5
+	
 	if Input.is_action_just_pressed("inventory"):
 		if animation_player.is_playing():
 			if animation_player.get_playing_speed() == playing_speed:
@@ -52,17 +66,28 @@ func _physics_process(delta: float) -> void:
 		# Flip sprite
 		if direction > 0:
 			animated_sprite.flip_h = false
+			flip = false
 		elif direction < 0:
 			animated_sprite.flip_h = true
+			flip = true
 		
 		# Play animations
 		if is_on_floor():
 			if direction == 0:
-				animated_sprite.play("idle")
+				if flip:
+					animated_sprite.play("idle_l")
+				else:
+					animated_sprite.play("idle_r")
 			else:
-				animated_sprite.play("move")
+				if flip:
+					animated_sprite.play("move_l")
+				else:
+					animated_sprite.play("move_r")
 		else:
-			animated_sprite.play("jump")
+			if flip:
+				animated_sprite.play("jump_l")
+			else:
+				animated_sprite.play("jump_r")
 	
 	
 	

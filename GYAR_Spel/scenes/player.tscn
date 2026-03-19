@@ -1,62 +1,107 @@
 [gd_scene format=3 uid="uid://bi0qoyv8qt2fy"]
 
 [ext_resource type="Script" uid="uid://bq8fam0qxhsdq" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://cauf67h34a3u5" path="res://assets/sprites/frame0000.png" id="2_smehm"]
-[ext_resource type="Texture2D" uid="uid://dcmgcc57jxxhl" path="res://assets/sprites/klo.png" id="3_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://dt8pcif78m203" path="res://assets/sprites/ny_vanster/ny_ga_vanster0000.png" id="3_4ni07"]
+[ext_resource type="Texture2D" uid="uid://dxn0k6ivjdl0l" path="res://assets/sprites/klo.png" id="3_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://c7tey0wcsccly" path="res://scenes/periodic_table.tscn" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://f572gukoaonm" path="res://assets/sprites/ny_vanster/ny_ga_vanster0001.png" id="4_l71n6"]
 [ext_resource type="Script" uid="uid://cor25ml4vekmi" path="res://scripts/claw_laser.gd" id="4_qfm1y"]
-[ext_resource type="Texture2D" uid="uid://b7sswu8xxfwta" path="res://assets/sprites/frame0001.png" id="4_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://cb1jy3pa1b4tk" path="res://scenes/laser_2d.tscn" id="5_fulsm"]
-[ext_resource type="Texture2D" uid="uid://c5kv5sca17kes" path="res://assets/sprites/frame0002.png" id="5_y4r1p"]
-[ext_resource type="Texture2D" uid="uid://bi5772oda111u" path="res://assets/sprites/frame0003.png" id="6_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://dxip1q3vlwdk1" path="res://assets/sprites/frame0004.png" id="7_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://djt0cbbcr4i3b" path="res://assets/sprites/ny_vanster/ny_ga_vanster0002.png" id="5_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://ctymu7135118h" path="res://assets/sprites/ny_vanster/ny_ga_vanster0003.png" id="6_ujl30"]
+[ext_resource type="Texture2D" uid="uid://cgywe7qg2bofl" path="res://assets/sprites/ny_vanster/ny_ga_vanster0004.png" id="7_31cv2"]
 [ext_resource type="Texture2D" uid="uid://cdw1b22jml262" path="res://assets/sprites/turn/turn_around0000.png" id="8_f1ej7"]
-[ext_resource type="Texture2D" uid="uid://vpi56q03oe45" path="res://assets/sprites/frame0005.png" id="8_jej6c"]
+[ext_resource type="Texture2D" uid="uid://ckid2aoj1g6n8" path="res://assets/sprites/ny_vanster/ny_ga_vanster0005.png" id="8_pf23h"]
+[ext_resource type="Texture2D" uid="uid://f5jxxb0bj28u" path="res://assets/sprites/ny_hoger/ny_ga_hoger0000.png" id="9_dt7fs"]
 [ext_resource type="Texture2D" uid="uid://b1aanynjh3ujm" path="res://assets/sprites/turn/turn_around0001.png" id="9_oprun"]
 [ext_resource type="Texture2D" uid="uid://iqycqp0af16f" path="res://assets/sprites/turn/turn_around0002.png" id="10_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://dq7em5ah770fl" path="res://assets/sprites/ny_hoger/ny_ga_hoger0001.png" id="10_wqfne"]
 [ext_resource type="Texture2D" uid="uid://ucfe40cip7hc" path="res://assets/sprites/turn/turn_around0003.png" id="11_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://b7q00kxjhytu6" path="res://assets/sprites/ny_hoger/ny_ga_hoger0002.png" id="11_wnwbv"]
 [ext_resource type="Texture2D" uid="uid://c35ohjuvgj5kc" path="res://assets/sprites/turn/turn_around0004.png" id="12_fulsm"]
+[ext_resource type="Texture2D" uid="uid://b62u5owbypwkp" path="res://assets/sprites/ny_hoger/ny_ga_hoger0003.png" id="12_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://cxwy3blh8ratt" path="res://assets/sprites/ny_hoger/ny_ga_hoger0004.png" id="13_487ah"]
+[ext_resource type="Texture2D" uid="uid://bvoyeue0yseg7" path="res://assets/sprites/ny_hoger/ny_ga_hoger0005.png" id="14_md1ol"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_60mlk"]
 resource_name = "turn"
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_smehm")
+"texture": ExtResource("3_4ni07")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_smehm")
-}],
-"loop": true,
-"name": &"jump",
+"name": &"idle_l",
 "speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_smehm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ur7pv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_y4r1p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_d2wvv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_3v2ag")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jej6c")
+"texture": ExtResource("9_dt7fs")
 }],
 "loop": true,
-"name": &"move",
+"name": &"idle_r",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4ni07")
+}],
+"loop": true,
+"name": &"jump_l",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dt7fs")
+}],
+"loop": true,
+"name": &"jump_r",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pf23h")
+}],
+"loop": true,
+"name": &"move_l",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_487ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_md1ol")
+}],
+"loop": true,
+"name": &"move_r",
 "speed": 7.0
 }, {
 "frames": [{
@@ -77,26 +122,6 @@ animations = [{
 }],
 "loop": false,
 "name": &"turn",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_fulsm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_qfm1y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_a8ls1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_oprun")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_f1ej7")
-}],
-"loop": false,
-"name": &"turn_r",
 "speed": 5.0
 }]
 
@@ -398,18 +423,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ClawLaser" type="AnimatedSprite2D" parent="." unique_id=197824598]
 z_index = 7
-position = Vector2(0, -187)
+position = Vector2(-5.9604645e-08, -158)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_4r5pv")
 centered = false
-offset = Vector2(-21.16, -59.74)
+offset = Vector2(-21.81, -84.895)
 script = ExtResource("4_qfm1y")
 
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(4, -2)
-target_position = Vector2(849, -139)
-start_distance = 90.0
-growth_time = 0.1
+z_index = 5
+position = Vector2(1, -4)
+target_position = Vector2(94.64945, 77.098206)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
 libraries/ = SubResource("AnimationLibrary_fulsm")
