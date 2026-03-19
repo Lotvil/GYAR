@@ -1,6 +1,6 @@
 extends Node2D
  
-@onready var ground: TileMapLayer = $room/TileMapLayer
+@onready var ground: TileMapLayer = $room/ground
 @onready var laser: RayCast2D = $Player/ClawLaser/LaserBeam2D
 @onready var periodic_table: Control = $Player/Camera2D/PeriodicTable
 

@@ -28,7 +28,7 @@ var finished_appearing := false
 
 @onready var line_width := line_2d.width
 
-@onready var ground: TileMapLayer = $"../../../room/TileMapLayer"
+@onready var ground: TileMapLayer = $"../../../room/ground"
 
 signal hit_tile(tile_pos: Vector2i, damage: float)
 
@@ -46,7 +46,7 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	collide_with_bodies = !ps_is_open
 	if ps_is_open:
-		cast_speed = 20000.0
+		cast_speed = 40000.0
 		max_length = 2000.0
 		modulate = Color.AQUA
 	else:

@@ -66,10 +66,10 @@ func _physics_process(delta: float) -> void:
 		# Flip sprite
 		if direction > 0:
 			animated_sprite.flip_h = false
-			flip = false
+			flip = true
 		elif direction < 0:
 			animated_sprite.flip_h = true
-			flip = true
+			flip = false
 		
 		# Play animations
 		if is_on_floor():
