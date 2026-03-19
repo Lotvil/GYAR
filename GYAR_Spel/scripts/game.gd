@@ -11,7 +11,6 @@ var current_block = "soil"
 var keybinds : Dictionary = {}  # int -> block_name
 
 func _ready():
-	print(block)
 	periodic_table.blocks = block
 	laser.hit_tile.connect(_on_laser_hit_tile)
 	periodic_table.sidebar.block_selected.connect(_on_block_selected)
