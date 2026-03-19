@@ -37,7 +37,6 @@ func _process(_delta: float) -> void:
 	if touchRight or touchLeft:
 		camera_2d.top_level = true
 		camera_2d.global_position.y = player.global_position.y -324
-		
 	
 	else:
 		camera_2d.top_level = false
@@ -46,6 +45,6 @@ func _process(_delta: float) -> void:
 		
 	
 	if touchLeft and !touchRight:
-		camera_2d.global_position.x = $markerLeft.global_position.x
+		camera_2d.global_position.x = $markerLeft.global_position.x-60
 	if touchRight and !touchLeft:
-		camera_2d.global_position.x = $markerRight.global_position.x
+		camera_2d.global_position.x = $markerRight.global_position.x+60

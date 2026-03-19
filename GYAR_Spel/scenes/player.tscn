@@ -423,7 +423,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ClawLaser" type="AnimatedSprite2D" parent="." unique_id=197824598]
 z_index = 7
-position = Vector2(-3.5527137e-15, -170.00002)
+position = Vector2(-5.9604645e-08, -158)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_4r5pv")
 centered = false
@@ -433,7 +433,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(-423.28827, 41.073822)
+target_position = Vector2(397.11154, 313.60522)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
 libraries/ = SubResource("AnimationLibrary_fulsm")
