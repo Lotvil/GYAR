@@ -6,7 +6,7 @@ extends RayCast2D
 ## Maximum length of the laser in pixels.
 @export var max_length := 1400.0
 ## Distance in pixels from the origin to start drawing and firing the laser.
-@export var start_distance := 90.0
+@export var start_distance := 120.0
 ## Base duration of the tween animation in seconds.
 @export var growth_time := 0.1
 @export var color := Color.WHITE: set = set_color
