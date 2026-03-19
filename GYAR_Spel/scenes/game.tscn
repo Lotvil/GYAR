@@ -74,10 +74,9 @@ block = Dictionary[String, ExtResource("2_dinhu")]({
 "jord": ExtResource("3_vtaks"),
 "sten": ExtResource("5_dinhu")
 })
-metadata/_edit_horizontal_guides_ = [-2042.0]
 
 [node name="Player" parent="." unique_id=2124404472 groups=["player"] instance=ExtResource("1_uwrxv")]
-position = Vector2(-344, -1407)
+position = Vector2(-13, -1327)
 
 [node name="killZones" type="Node" parent="." unique_id=932498351]
 

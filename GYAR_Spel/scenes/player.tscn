@@ -471,10 +471,10 @@ shape = SubResource("RectangleShape2D_a8ls1")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=978261423]
 position = Vector2(0, -324)
 zoom = Vector2(0.4, 0.4)
-limit_enabled = false
-limit_left = -5300
-limit_right = 5900
-limit_bottom = 2500
+limit_left = -12550
+limit_top = -3400
+limit_right = 2550
+limit_bottom = 2750
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -509,7 +509,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(71.76803, 14.358292)
+target_position = Vector2(1386.2437, -195.77621)
 start_distance = 90.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
