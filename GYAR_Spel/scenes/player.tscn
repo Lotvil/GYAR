@@ -382,6 +382,15 @@ _data = {
 &"ps_open": SubResource("Animation_qfm1y")
 }
 
+[sub_resource type="Gradient" id="Gradient_a38lo"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4ni07"]
+gradient = SubResource("Gradient_a38lo")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8406593, 0.85897434)
+
 [node name="Player" type="CharacterBody2D" unique_id=2124404472]
 collision_layer = 2
 script = ExtResource("1_g2els")
@@ -433,7 +442,14 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(397.11154, 313.60522)
+target_position = Vector2(1032.2908, -945.7145)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
 libraries/ = SubResource("AnimationLibrary_fulsm")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=330599533]
+position = Vector2(1, 0)
+scale = Vector2(2622.6555, 2528.1255)
+energy = 0.5
+texture = SubResource("GradientTexture2D_4ni07")
+texture_scale = 0.01
