@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bjspl1jcwos67"]
+
+[ext_resource type="Script" uid="uid://dthsw21vl7jn0" path="res://scripts/win.gd" id="1_826fv"]
+[ext_resource type="Texture2D" uid="uid://o14l8jne76bp" path="res://assets/menu/win.png" id="1_r4oei"]
+
+[node name="win" type="Node2D" unique_id=437854949]
+script = ExtResource("1_826fv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=545098929]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.60103124, 0.601664)
+texture = ExtResource("1_r4oei")
+
+[node name="Button" type="Button" parent="." unique_id=1556047953]
+offset_left = 699.0
+offset_top = 426.0
+offset_right = 885.0
+offset_bottom = 528.0
+text = "Quit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
