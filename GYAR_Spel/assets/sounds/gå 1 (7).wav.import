@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcggif4pl1b2g"
+path="res://.godot/imported/gå 1 (7).wav-0f845565f416ae643cfa41b4f1b8f315.sample"
+
+[deps]
+
+source_file="res://assets/sounds/gå 1 (7).wav"
+dest_files=["res://.godot/imported/gå 1 (7).wav-0f845565f416ae643cfa41b4f1b8f315.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

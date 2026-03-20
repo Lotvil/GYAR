@@ -20,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://d4iaueidiqm8e" path="res://assets/resources/laser.tres" id="13_264po"]
 [ext_resource type="Texture2D" uid="uid://c1ka1uuiynn7y" path="res://assets/sprites/turn/Grotta.png" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://ccvu5x84b7sl7" path="res://scenes/win_cond.tscn" id="20_1kice"]
+[ext_resource type="Texture2D" uid="uid://cqer0warumv4s" path="res://assets/sprites/Sönder raket.png" id="21_5newe"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 
@@ -235,10 +236,10 @@ offset = Vector2(-32.035, 0)
 
 [node name="ColorRect" type="ColorRect" parent="Light" unique_id=1195159274]
 z_index = -4
-offset_left = -13973.0
-offset_top = -4971.0
-offset_right = 5431.0
-offset_bottom = 4071.0
+offset_left = -14246.0
+offset_top = -4762.0
+offset_right = 5158.0
+offset_bottom = 4280.0
 mouse_filter = 2
 color = Color(0.2966023, 0.2966023, 0.2966023, 0.48235294)
 metadata/_edit_use_anchors_ = true
@@ -262,3 +263,9 @@ texture = SubResource("GradientTexture2D_kvuet")
 [node name="winCond" parent="." unique_id=1646045636 instance=ExtResource("20_1kice")]
 position = Vector2(-179.00003, -3376)
 scale = Vector2(7.5600004, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=948029919]
+z_index = -1
+position = Vector2(560, -1403)
+scale = Vector2(1.7883332, 1.7883334)
+texture = ExtResource("21_5newe")
