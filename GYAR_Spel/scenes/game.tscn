@@ -113,23 +113,23 @@ texture_region_size = Vector2i(50, 50)
 3:0/size_in_atlas = Vector2i(3, 6)
 3:0/0 = 0
 3:0/0/texture_origin = Vector2i(0, 125)
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-76.20398, -16.369736, -75.07504, -69.43028, -34.432922, -71.68818, 61.52765, 58.70529, 61.52765, 150.15004, -42.899994, 152.40794, 19.756592, 76.203964)
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-76.76843, -198.69481, -32.17502, -198.13033, -14.676331, -146.19873, 62.656616, -73.946075, 67.17239, 25.96579, -41.206604, 25.401321, 22.578949, -50.802658, -67.17239, -127.00662)
 6:0/size_in_atlas = Vector2i(3, 6)
 6:0/0 = 0
 6:0/0/texture_origin = Vector2i(0, 125)
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-76.20398, -16.369736, -74.51056, -86.3645, -33.86844, -85.23556, 63.22107, 45.722374, 61.52765, 150.15004, -42.899994, 152.40794, 23.143433, 59.269753)
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-73.946075, -209.41982, -32.17502, -207.16191, -14.111847, -156.92374, 64.91449, -82.41319, 67.17239, 25.96579, -41.206604, 25.401321, 26.530273, -60.398712, -70.559235, -149.0211)
 9:0/size_in_atlas = Vector2i(3, 6)
 9:0/0 = 0
 9:0/0/texture_origin = Vector2i(0, 125)
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-74.51053, -55.882904, -76.76843, -112.89477, -28.788147, -112.89477, 66.60794, 15.805267, 61.52765, 150.15004, -42.899994, 152.40794, 20.321075, 34.99739)
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-74.51056, -241.03033, -29.352661, -238.77245, -23.143433, -191.35664, 64.350006, -120.23294, 67.17239, 25.96579, -41.206604, 25.401321, 25.401337, -89.75134, -68.30136, -168.77768)
 12:0/size_in_atlas = Vector2i(3, 6)
 12:0/0 = 0
 12:0/0/texture_origin = Vector2i(0, 125)
-12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-72.252655, -81.28423, -75.639496, -144.50531, -29.35263, -143.37636, 66.60794, -1.128952, 61.52765, 150.15004, -42.899994, 152.40794, 19.192139, 4.515793)
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-74.51056, -265.8672, -31.046051, -265.8672, -23.707886, -224.09612, 60.963196, -149.02109, 67.17239, 25.96579, -41.206604, 25.401321, 18.063171, -122.490814, -71.12372, -197.00137)
 15:0/size_in_atlas = Vector2i(3, 6)
 15:0/0 = 0
 15:0/0/texture_origin = Vector2i(0, 125)
-15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(31.046082, 29.352638, 34.997375, 120.7974, 61.52765, 150.15004, -42.899994, 152.40794, -0.5644531, 133.21582, 9.596069, 38.9487)
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(30.481567, -95.96055, 37.25525, -4.515793, 67.17239, 25.96579, -41.206604, 25.401321, -1.6934204, 5.644745, 6.209198, -85.23555)
 
 [sub_resource type="TileSet" id="TileSet_trtic"]
 tile_size = Vector2i(50, 50)
@@ -219,6 +219,12 @@ mouse_filter = 2
 texture = ExtResource("13_kvuet")
 metadata/_edit_use_anchors_ = true
 
+[node name="ship" type="Sprite2D" parent="room" unique_id=948029919]
+z_index = -1
+position = Vector2(560, -1403)
+scale = Vector2(1.7883332, 1.7883334)
+texture = ExtResource("21_5newe")
+
 [node name="doors" type="Node" parent="." unique_id=916950305]
 
 [node name="Door" parent="doors" unique_id=1496488519 instance=ExtResource("12_dinhu")]
@@ -283,9 +289,3 @@ texture = SubResource("GradientTexture2D_kvuet")
 [node name="winCond" parent="." unique_id=1646045636 instance=ExtResource("20_1kice")]
 position = Vector2(-179.00003, -3376)
 scale = Vector2(7.5600004, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=948029919]
-z_index = -1
-position = Vector2(560, -1403)
-scale = Vector2(1.7883332, 1.7883334)
-texture = ExtResource("21_5newe")
