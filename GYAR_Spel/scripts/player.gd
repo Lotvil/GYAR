@@ -80,9 +80,9 @@ func _physics_process(delta: float) -> void:
 					animated_sprite.play("idle_r")
 			else:
 				if flip:
-					animation_player.play("walk_r")
+					animated_sprite.play("move_l")
 				else:
-					animation_player.play("walk_l")
+					animated_sprite.play("move_r")
 		else:
 			if flip:
 				animated_sprite.play("jump_l")
