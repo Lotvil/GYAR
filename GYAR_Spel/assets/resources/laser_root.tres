@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BlockData" format=3 uid="uid://b03h8x31m6d5u"]
+
+[ext_resource type="Script" uid="uid://d2ntbd2ve77q6" path="res://scripts/BlockData.gd" id="1_10q8n"]
+
+[resource]
+script = ExtResource("1_10q8n")
+tile_name = "laser_root"
+health = 6
+atlas_coords = Array[Vector2i]([Vector2i(15, 0)])
+laser_lvl = 2
+metadata/_custom_type_script = "uid://d2ntbd2ve77q6"
