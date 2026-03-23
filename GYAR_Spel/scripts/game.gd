@@ -147,12 +147,14 @@ func check_uppgrades(tile_name, tile_pos):
 	#Building permit
 	if tile_name == "bulb":
 		sidebar.build_permit = true
+		$Light/PointLightBulb.enabled = false
 	
 	#Laser level 2
 	if tile_name == "laser":
 		laser_lvl = 2
 		laser.damage_per_second = 6.0
 		laser.color = Color.RED
+		$Light/PointLightLaser.enabled = false
 		
 		tile_pos.y += 3
 		tile_pos.x += 1

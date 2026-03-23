@@ -130,13 +130,13 @@ animations = [{
 size = Vector2(11.142, 15.43)
 
 [sub_resource type="Gradient" id="Gradient_4ni07"]
-offsets = PackedFloat32Array(0.6827731, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.73848236, 0.8089431, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.4570434, 0.4570434, 0.4570434, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_l71n6"]
 gradient = SubResource("Gradient_4ni07")
-width = 1888
-height = 932
+width = 2088
+height = 1032
 fill = 2
 fill_from = Vector2(0.50769234, 0.51452994)
 fill_to = Vector2(0.9732704, 0.05175881)
@@ -498,7 +498,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(345.70828, 1270.1505)
+target_position = Vector2(-875.22845, -1092.6917)
 
 [node name="PlayerLight" type="PointLight2D" parent="." unique_id=330599533]
 position = Vector2(1, 0)

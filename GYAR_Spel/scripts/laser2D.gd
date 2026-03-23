@@ -96,6 +96,11 @@ func _physics_process(delta: float) -> void:
 	if end_particles:
 		end_particles.position = line_2d.points[1]
 		end_particles.emitting = finished_appearing and not is_colliding()
+	
+	if finished_appearing:
+		$PointLight2D.position = laser_end_position
+		$PointLight2D.color = color
+		$PointLight2D.enabled = true
 
 
 func set_is_casting(new_value: bool) -> void:
@@ -109,7 +114,7 @@ func set_is_casting(new_value: bool) -> void:
 
 	beam_particles.emitting = is_casting
 	casting_particles.emitting = is_casting
-	
+		
 
 	if is_casting:
 		var laser_start := Vector2.RIGHT * start_distance
@@ -122,6 +127,7 @@ func set_is_casting(new_value: bool) -> void:
 		target_position = Vector2.ZERO
 		collision_particles.emitting = false
 		end_particles.emitting = false
+		$PointLight2D.enabled = false
 		disappear()
 
 
