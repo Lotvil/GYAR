@@ -498,7 +498,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(438.76926, -51.12027)
+target_position = Vector2(-787.32806, 1153.3231)
 
 [node name="PlayerLight" type="PointLight2D" parent="." unique_id=330599533]
 position = Vector2(1, 0)
