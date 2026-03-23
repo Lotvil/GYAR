@@ -156,8 +156,8 @@ func check_uppgrades(tile_name, tile_pos):
 		laser.color = Color.RED
 		$Light/PointLightLaser.enabled = false
 		
-		tile_pos.y += 3
-		tile_pos.x += 1
+		tile_pos.y += -3
+		tile_pos.x += -1
 
 		ground.set_cell(tile_pos, block[tile_name].source_id, Vector2i(15, 0))
 		
