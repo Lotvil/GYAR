@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b62u5owbypwkp" path="res://assets/sprites/ny_hoger/ny_ga_hoger0003.png" id="12_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://cxwy3blh8ratt" path="res://assets/sprites/ny_hoger/ny_ga_hoger0004.png" id="13_487ah"]
 [ext_resource type="Texture2D" uid="uid://bvoyeue0yseg7" path="res://assets/sprites/ny_hoger/ny_ga_hoger0005.png" id="14_md1ol"]
+[ext_resource type="AudioStream" uid="uid://b217m11bxhf55" path="res://assets/sounds/Gå ljud (11) (1).wav" id="23_4ni07"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_60mlk"]
 resource_name = "turn"
@@ -129,13 +130,13 @@ animations = [{
 size = Vector2(11.142, 15.43)
 
 [sub_resource type="Gradient" id="Gradient_4ni07"]
-offsets = PackedFloat32Array(0.6827731, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.73848236, 0.8089431, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.4570434, 0.4570434, 0.4570434, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_l71n6"]
 gradient = SubResource("Gradient_4ni07")
-width = 1888
-height = 932
+width = 2088
+height = 1032
 fill = 2
 fill_from = Vector2(0.50769234, 0.51452994)
 fill_to = Vector2(0.9732704, 0.05175881)
@@ -434,6 +435,11 @@ _data = {
 &"walk_r": SubResource("Animation_4ni07")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l71n6"]
+random_pitch = 1.005793
+streams_count = 1
+stream_0/stream = ExtResource("23_4ni07")
+
 [node name="Player" type="CharacterBody2D" unique_id=2124404472]
 collision_layer = 2
 script = ExtResource("1_g2els")
@@ -492,7 +498,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(-826.439, 443.68365)
+target_position = Vector2(-875.22845, -1092.6917)
 
 [node name="PlayerLight" type="PointLight2D" parent="." unique_id=330599533]
 position = Vector2(1, 0)
@@ -503,3 +509,8 @@ texture_scale = 0.01
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17318823]
 libraries/ = SubResource("AnimationLibrary_fulsm")
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="." unique_id=39882489]
+stream = SubResource("AudioStreamRandomizer_l71n6")
+max_polyphony = 2
+bus = &"SFX"

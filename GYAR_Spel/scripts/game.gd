@@ -54,12 +54,13 @@ func take_damage(tile_name: StringName, tile_pos: Vector2i, amount: float = 1):
 
 	var current_health = broken_tiles_health[tile_pos]
 	var max_health = block[tile_name].health
+	
 
 	if current_health <= 0:
 		ground.erase_cell(tile_pos)
 		broken_tiles_health.erase(tile_pos)
 		add_elements(tile_name)
-		check_uppgrades(tile_name)
+		check_uppgrades(tile_name, tile_pos)
 		return
 
 	var stage_count = block[tile_name].atlas_coords.size()
@@ -142,14 +143,23 @@ func is_placable(event, tile_pos) -> bool:
 func _on_block_selected(block_name):
 	current_block = block_name
 
-func check_uppgrades(tile_name):
+func check_uppgrades(tile_name, tile_pos):
 	#Building permit
 	if tile_name == "bulb":
 		sidebar.build_permit = true
+		$Light/PointLightBulb.enabled = false
 	
 	#Laser level 2
 	if tile_name == "laser":
 		laser_lvl = 2
 		laser.damage_per_second = 6.0
 		laser.color = Color.RED
+		$Light/PointLightLaser.enabled = false
+		
+		tile_pos.y += 3
+		tile_pos.x += 1
+
+		ground.set_cell(tile_pos, block[tile_name].source_id, Vector2i(15, 0))
+		
+		
 	
