@@ -8,7 +8,8 @@ tile_name = "sten_dark"
 health = 6
 atlas_coords = Array[Vector2i]([Vector2i(1, 2)])
 elements = Dictionary[String, int]({
-"Al": 2
+"Al": 2,
+"O": 2
 })
 laser_lvl = 2
 metadata/_custom_type_script = "uid://d2ntbd2ve77q6"

@@ -181,9 +181,9 @@ fill_to = Vector2(0.8504273, 0.14957266)
 script = ExtResource("1_gee14")
 block = Dictionary[String, ExtResource("2_dinhu")]({
 "bulb": ExtResource("12_pl11u"),
-"gräd_light": ExtResource("8_37s47"),
 "gräs": ExtResource("4_kvpfn"),
 "gräs_dark": ExtResource("7_5newe"),
+"gräs_light": ExtResource("8_37s47"),
 "laser": ExtResource("13_264po"),
 "laser_root": ExtResource("14_37s47"),
 "rot": ExtResource("3_ssvqc"),
