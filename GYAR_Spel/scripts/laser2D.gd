@@ -19,6 +19,8 @@ extends RayCast2D
 
 var tween: Tween = null
 var finished_appearing := false
+var play := true
+var hitplay = true
 
 @onready var line_2d: Line2D = %Line2D
 @onready var casting_particles: GPUParticles2D = %CastingParticles2D
@@ -65,6 +67,7 @@ func _physics_process(delta: float) -> void:
 	force_raycast_update()
 
 	if is_colliding():
+		
 		if ground == null:
 			return
 		
@@ -80,11 +83,18 @@ func _physics_process(delta: float) -> void:
 		)
 		
 		var damage = damage_per_second * delta
-
-		emit_signal("hit_tile", tile_pos, damage)
 		
-		collision_particles.global_rotation = get_collision_normal().angle()
-		collision_particles.position = laser_end_position
+		if finished_appearing:
+			if hitplay:
+				hitplay = false
+				$"../LaserHit".playing = true
+			
+			emit_signal("hit_tile", tile_pos, damage)
+		
+			collision_particles.global_rotation = get_collision_normal().angle()
+			collision_particles.position = laser_end_position
+	else:
+		hitplay = true
 
 	line_2d.points[1] = laser_end_position
 
@@ -92,15 +102,18 @@ func _physics_process(delta: float) -> void:
 	beam_particles.position = laser_start_position + (laser_end_position - laser_start_position) * 0.5
 	beam_particles.process_material.emission_box_extents.x = laser_end_position.distance_to(laser_start_position) * 0.5
 
-	collision_particles.emitting = is_colliding()
 	if end_particles:
 		end_particles.position = line_2d.points[1]
 		end_particles.emitting = finished_appearing and not is_colliding()
 	
 	if finished_appearing:
+		collision_particles.emitting = is_colliding()
 		$PointLight2D.position = laser_end_position
 		$PointLight2D.color = color
 		$PointLight2D.enabled = true
+		if play:
+			play = false
+			$"../LaserGoing".playing = true
 
 
 func set_is_casting(new_value: bool) -> void:
@@ -132,16 +145,21 @@ func set_is_casting(new_value: bool) -> void:
 
 
 func appear() -> void:
+	play = true
 	line_2d.visible = true
 	finished_appearing = false
+	$"../LaserStart".playing = true
+	#timer
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween()
+	tween.tween_interval(0.4)
 	tween.tween_property(line_2d, "width", line_width, growth_time * 2.0).from(0.0)
 	tween.tween_callback(func(): finished_appearing = true)
 
 
 func disappear() -> void:
+	$"../LaserGoing".playing = false
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween()
