@@ -177,6 +177,43 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.8504273, 0.14957266)
 
+[sub_resource type="Animation" id="Animation_37s47"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bt5mj"]
+resource_name = "dissolve"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e1j6l"]
+_data = {
+&"RESET": SubResource("Animation_37s47"),
+&"dissolve": SubResource("Animation_bt5mj")
+}
+
 [node name="Game" type="Node2D" unique_id=909740097]
 script = ExtResource("1_gee14")
 block = Dictionary[String, ExtResource("2_dinhu")]({
@@ -293,8 +330,23 @@ texture = SubResource("GradientTexture2D_kvuet")
 [node name="winCond" parent="." unique_id=1646045636 instance=ExtResource("20_1kice")]
 position = Vector2(-179.00003, -3376)
 scale = Vector2(7.5600004, 1)
+didWin = true
 
-[node name="winCond2" parent="." unique_id=217440306 instance=ExtResource("20_1kice")]
+[node name="winCondLose" parent="." unique_id=217440306 instance=ExtResource("20_1kice")]
 position = Vector2(2640, -1301)
 rotation = 1.5707964
 scale = Vector2(4.632, 1)
+
+[node name="loadingscreen" type="Node" parent="." unique_id=2003870098]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="loadingscreen" unique_id=352317752]
+libraries/ = SubResource("AnimationLibrary_e1j6l")
+
+[node name="ColorRect" type="ColorRect" parent="loadingscreen" unique_id=2051113178]
+modulate = Color(1, 1, 1, 0)
+offset_left = -12590.0
+offset_top = -3418.0
+offset_right = 2579.0
+offset_bottom = 2794.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

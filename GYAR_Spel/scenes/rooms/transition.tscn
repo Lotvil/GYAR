@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dsxe87njgorwl"]
+
+[ext_resource type="Script" uid="uid://bmgmtqnpmva4r" path="res://scripts/transition.gd" id="1_vvnwr"]
+[ext_resource type="AudioStream" uid="uid://b8s4b22ohkc2m" path="res://assets/sounds/crash.wav" id="2_yc4dj"]
+
+[node name="transition" type="Node2D" unique_id=208847221]
+script = ExtResource("1_vvnwr")
+
+[node name="dissolve_rect" type="ColorRect" parent="." unique_id=1013818494]
+offset_right = 1169.0
+offset_bottom = 665.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=533559481]
+stream = ExtResource("2_yc4dj")

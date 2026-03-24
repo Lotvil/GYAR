@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dm01le0csqia7"]
+
+[ext_resource type="Script" uid="uid://xeeh8chsprx4" path="res://scripts/lose.gd" id="1_r6nsb"]
+[ext_resource type="Texture2D" uid="uid://cwn4h4qthnaee" path="res://assets/menu/lost.png" id="2_10rtl"]
+
+[node name="lose" type="Node2D" unique_id=69883271]
+script = ExtResource("1_r6nsb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=712549186]
+offset_right = 1155.0
+offset_bottom = 652.0
+texture = ExtResource("2_10rtl")
+
+[node name="Button" type="Button" parent="." unique_id=1736664387]
+offset_left = 852.0
+offset_top = 104.0
+offset_right = 999.0
+offset_bottom = 169.0
+text = "restart"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

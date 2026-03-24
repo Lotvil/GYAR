@@ -4,6 +4,7 @@ extends Node2D
 @onready var laser: RayCast2D = $Player/ClawLaser/LaserBeam2D
 @onready var periodic_table: Control = $Player/Camera2D/PeriodicTable
 @onready var sidebar: PanelContainer = $Player/Camera2D/PeriodicTable/VSplitContainer/HSplitContainer/Sidebar
+@onready var anim: AnimationPlayer = $loadingscreen/AnimationPlayer
 
 
 @export var block : Dictionary[String, BlockData]
@@ -14,6 +15,9 @@ var current_block = ""
 var keybinds : Dictionary = {}  # int -> block_name
 
 func _ready():
+	anim.play("dissolve")
+	await anim.animation_finished
+	
 	periodic_table.blocks = block
 	laser.hit_tile.connect(_on_laser_hit_tile)
 	periodic_table.sidebar.block_selected.connect(_on_block_selected)
