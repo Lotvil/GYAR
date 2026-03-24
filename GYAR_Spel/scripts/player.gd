@@ -14,6 +14,7 @@ const JUMP_VELOCITY = -1250.0
 @export var ps_is_open = false
 var ps_is_open2 = false
 var playing_speed := 1.5
+var hit_floor = false
 
 @export var flip = false
 
@@ -30,16 +31,18 @@ func _process(_delta):
 			claw_laser.z_index = 5
 	
 	if Input.is_action_just_pressed("inventory"):
-		if animation_player.is_playing():
-			if animation_player.get_playing_speed() == playing_speed:
-				animation_player.speed_scale = -1*playing_speed
-				ps_is_open2 = false
-			else:
-				animation_player.speed_scale = playing_speed
-				ps_is_open2 = true
+		var pos = animation_player.current_animation_position
+		if animation_player.get_current_animation() == "ps_open":
+			animation_player.play_section("ps_close", 0, pos, -1, 1, true)
+			animation_player.speed_scale = -1*playing_speed
+			ps_is_open2 = false
+		elif animation_player.get_current_animation() == "ps_close":
+			animation_player.play_section("ps_open", pos, 1, -1, 1, false)
+			animation_player.speed_scale = playing_speed
+			ps_is_open2 = true
 		else:
 			if ps_is_open2:
-				animation_player.play("ps_open", -1.0, 1.0, true)
+				animation_player.play("ps_close", -1.0, 1.0, true)
 				animation_player.speed_scale = -1*playing_speed
 				ps_is_open2 = false
 			else:
@@ -71,23 +74,33 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.flip_h = true
 			flip = false
 		
+		
 		# Play animations
+		animation_player.speed_scale = 1
 		if is_on_floor():
+			if hit_floor:
+				$Walk.playing = true
+				hit_floor = false
+			
 			if direction == 0:
 				if flip:
-					animated_sprite.play("idle_l")
+					animation_player.play("idle_r")
 				else:
-					animated_sprite.play("idle_r")
+					animation_player.play("idle_l")
 			else:
 				if flip:
-					animated_sprite.play("move_l")
+					animation_player.play("walk_r")
 				else:
-					animated_sprite.play("move_r")
+					animation_player.play("walk_l")
 		else:
+			if !hit_floor:
+				$Walk.playing = true
+				hit_floor = true
 			if flip:
-				animated_sprite.play("jump_l")
+				animation_player.play("jump_r")
 			else:
-				animated_sprite.play("jump_r")
+				animation_player.play("jump_l")
+			
 	
 	if direction:
 		velocity.x = direction * SPEED

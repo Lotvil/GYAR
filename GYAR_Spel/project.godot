@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Gyar"
-run/main_scene="uid://bh3l8ww5gbxkh"
+run/main_scene="uid://15gurnwfdsjb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://newyix2u22o3"
 

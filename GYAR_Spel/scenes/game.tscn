@@ -232,7 +232,7 @@ block = Dictionary[String, ExtResource("2_dinhu")]({
 })
 
 [node name="Player" parent="." unique_id=2124404472 groups=["player"] instance=ExtResource("1_uwrxv")]
-position = Vector2(-13, -1327)
+position = Vector2(2, -1926)
 
 [node name="killZones" type="Node" parent="." unique_id=932498351]
 
