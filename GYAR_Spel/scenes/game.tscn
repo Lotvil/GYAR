@@ -330,8 +330,9 @@ texture = SubResource("GradientTexture2D_kvuet")
 [node name="winCond" parent="." unique_id=1646045636 instance=ExtResource("20_1kice")]
 position = Vector2(-179.00003, -3376)
 scale = Vector2(7.5600004, 1)
+didWin = true
 
-[node name="winCond2" parent="." unique_id=217440306 instance=ExtResource("20_1kice")]
+[node name="winCondLose" parent="." unique_id=217440306 instance=ExtResource("20_1kice")]
 position = Vector2(2640, -1301)
 rotation = 1.5707964
 scale = Vector2(4.632, 1)
