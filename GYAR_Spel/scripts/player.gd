@@ -61,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	if !ps_is_open:
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
+			$Walk.playing = true
 			velocity.y = JUMP_VELOCITY
 
 		# Get the input direction -1, 0, 1
@@ -94,7 +95,6 @@ func _physics_process(delta: float) -> void:
 					animation_player.play("walk_l")
 		else:
 			if !hit_floor:
-				$Walk.playing = true
 				hit_floor = true
 			if flip:
 				animation_player.play("jump_r")

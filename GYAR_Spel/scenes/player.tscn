@@ -798,7 +798,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(-775.775, 714.3062)
+target_position = Vector2(1337.8073, 412.64005)
 
 [node name="LaserStart" type="AudioStreamPlayer2D" parent="ClawLaser" unique_id=1083600810]
 position = Vector2(5.075305e-15, 242.85715)
