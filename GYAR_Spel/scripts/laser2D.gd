@@ -10,6 +10,7 @@ extends RayCast2D
 ## Base duration of the tween animation in seconds.
 @export var growth_time := 0.1
 @export var color := Color.GREEN
+var res_color = color
 
 @export var damage_per_second: float = 3.0
 
@@ -50,10 +51,12 @@ func _process(_delta) -> void:
 		cast_speed = 40000.0
 		max_length = 2000.0
 		modulate = Color.AQUA
+		res_color = Color.AQUA
 	else:
 		cast_speed = 8000.0
 		max_length = 1400.0
 		modulate = color
+		res_color = color
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos : Vector2 = to_local(get_global_mouse_position())
@@ -109,7 +112,7 @@ func _physics_process(delta: float) -> void:
 	if finished_appearing:
 		collision_particles.emitting = is_colliding()
 		$PointLight2D.position = laser_end_position
-		$PointLight2D.color = color
+		$PointLight2D.color = res_color
 		$PointLight2D.enabled = true
 		if play:
 			play = false
@@ -148,12 +151,14 @@ func appear() -> void:
 	play = true
 	line_2d.visible = true
 	finished_appearing = false
-	$"../LaserStart".playing = true
+	if !ps_is_open:
+		$"../LaserStart".playing = true
 	#timer
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween()
-	tween.tween_interval(0.4)
+	if !ps_is_open:
+		tween.tween_interval(0.4)
 	tween.tween_property(line_2d, "width", line_width, growth_time * 2.0).from(0.0)
 	tween.tween_callback(func(): finished_appearing = true)
 

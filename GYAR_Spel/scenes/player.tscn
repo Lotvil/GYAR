@@ -798,7 +798,7 @@ script = ExtResource("4_qfm1y")
 [node name="LaserBeam2D" parent="ClawLaser" unique_id=1495494002 instance=ExtResource("5_fulsm")]
 z_index = 5
 position = Vector2(1, -4)
-target_position = Vector2(739.5636, -9.877991)
+target_position = Vector2(-775.775, 714.3062)
 
 [node name="LaserStart" type="AudioStreamPlayer2D" parent="ClawLaser" unique_id=1083600810]
 position = Vector2(5.075305e-15, 242.85715)
@@ -815,6 +815,7 @@ bus = &"SFX"
 
 [node name="LaserHit" type="AudioStreamPlayer2D" parent="ClawLaser" unique_id=647311485]
 stream = ExtResource("24_487ah")
+volume_db = -5.0
 
 [node name="PlayerLight" type="PointLight2D" parent="." unique_id=330599533]
 position = Vector2(1, 0)
